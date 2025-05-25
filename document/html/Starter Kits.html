@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Starter kits</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    body {
+      overflow-x: hidden  ;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      width: 100%;
+      background-color: rgb(255, 255, 255);
+      color: red;
+      text-align: left;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .sidebar {
+      height: 100vh;
+      width: 250px;
+      position: fixed;
+      top: 50px;
+      left: 0;
+      background-color: #ffffff;
+      padding-top: 20px;
+      overflow-y: auto;
+    }
+
+    .sidebar a {
+      color: #000000;
+      padding: 15px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      background-color: #c41f1f;
+      color: #fff;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 80px 20px 20px; 
+    }
+
+    .submenu a {
+      padding-left: 30px;
+      background-color: #f8f9fa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+   Laravel
+  </div>
+
+  <div class="sidebar">
+    <a data-bs-toggle="collapse" href="#submenuPrologue" role="button" aria-expanded="false" aria-controls="submenuPrologue">
+      Prologue
+    </a>
+    <div class="collapse submenu" id="submenuPrologue">
+      <a href="Release Notes.html">Release Notes</a>
+      <a href="Upgrade Guide.html">Upgrade Guide</a>
+      <a href="Configuration.html">Contribution Guide</a>
+    </div>
+
+    <a data-bs-toggle="collapse" href="#submenuGettingStarted" role="button" aria-expanded="false" aria-controls="submenuGettingStarted">
+      Getting Started
+    </a>
+    <div class="collapse submenu" id="submenuGettingStarted">
+      <a href="Installation.html">Installation</a>
+      <a href="Configuration.html">Configuration</a>
+      <a href="Directory Structure.html">Directory Structure</a>
+      <a href="Frontend.html">Frontend</a>
+      <a href="#">Starter Kits</a>
+      <a href="Deployment.html">Deployment</a>
+    </div>
+
+    <a data-bs-toggle="collapse" href="#submenuArchitecture" role="button" aria-expanded="false" aria-controls="submenuArchitecture">
+      Architecture Concepts
+    </a>
+    <div class="collapse submenu" id="submenuArchitecture">
+      <a href="Request Lifecycle.html">Request Life cycle</a>
+      <a href="">Service Container</a>
+      <a href="#">Service Providers</a>
+      <a href="#">Facades</a>
+    </div>
+
+    
+    <a href="">The basic</a>
+    <a href="">Digging Developer</a>
+    <a href="">Security</a>
+    <a href="">Data Base</a>
+    <a href="">Eloquent ORM</a>
+    <a href="">Testing</a>
+    <a href="">Packages</a>
+    <a href="">API Documentation</a>
+  </div>
+
+  <div class="main-content">
+    <h1>Starter Kits</h1>
+    <br>
+     <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Introduction</p>
+     <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Creating an Application Using a Starter Kit</p>
+     <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Available Starter Kits</p>
+     <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>React</p>
+     <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Vue</p>
+     <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Livewire</p>
+     <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Starter Kit Customization</p>
+     <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>React</p>
+     <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Vue</p>
+     <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Livewire</p>
+     <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>WorkOS AuthKit Authentication</p>
+     <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Inertia SSR</p>
+     <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Community Maintained Starter Kits</p>
+     <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Frequently Asked Questions</p>
+     <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Introduction</h5>
+    <br>
+    <p>To give you a head start building your new Laravel application, we are happy to offer application starter kits. These starter kits give you a head start on building your next Laravel application, and include the routes, controllers, and views you need to register and authenticate your application's users.</p>
+    <br>
+    <p>Inertia allows you to build modern, single-page React applications using classic server-side routing and controllers. This lets you enjoy the frontend power of React combined with the incredible backend productivity of Laravel and lightning-fast Vite compilation.</p>
+    <br>
+    <p>The React starter kit utilizes React 19, TypeScript, Tailwind, and the shadcn/ui component library.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Creating an Application Using a Starter Kit</h5>
+    <br>
+    <p>To create a new Laravel application using one of our starter kits, you should first install PHP and the Laravel CLI tool. If you already have PHP and Composer installed, you may install the Laravel installer CLI tool via Composer: composer global require laravel/installer</p>
+    <br>
+    <p>Then, create a new Laravel application using the Laravel installer CLI. The Laravel installer will prompt you to select your preferred starter kit:</p>
+    <br>
+    <p>After creating your Laravel application, you only need to install its frontend dependencies via NPM and start the Laravel development server:</p>
+    <br>
+    <li>cd my-app</li>
+    <li>npm install && npm run build</li>
+    <li>composer run dev</li>
+    <br>
+    <p>Once you have started the Laravel development server, your application will be accessible in your web browser at http:localhost:8000.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>available Starter Kit</h5>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>React</h5>
+    <br>
+    <p>Our React starter kit provides a robust, modern starting point for building Laravel applications with a React frontend using Inertia.</p>
+    <br>
+    <p>Inertia allows you to build modern, single-page React applications using classic server-side routing and controllers. This lets you enjoy the frontend power of React combined with the incredible backend productivity of Laravel and lightning-fast Vite compilation.</p>
+    <br>
+    <p>The React starter kit utilizes React 19, TypeScript, Tailwind, and the shadcn/ui component library.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Vue</h5>
+    <br>
+    <p>Our Vue starter kit provides a great starting point for building Laravel applications with a Vue frontend using Inertia.</p>
+    <br>
+    <p>Inertia allows you to build modern, single-page Vue applications using classic server-side routing and controllers. This lets you enjoy the frontend power of Vue combined with the incredible backend productivity of Laravel and lightning-fast Vite compilation.</p>
+    <br>
+    <p>The Vue starter kit utilizes the Vue Composition API, TypeScript, Tailwind, and the shadcn-vue component library.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Starter Kit Customization</h5>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>React</h5>
+    <br>
+    <p>Our React starter kit is built with Inertia 2, React 19, Tailwind 4, and shadcn/ui. As with all of our starter kits, all of the backend and frontend code exists within your application to allow for full customization.</p>
+    <br>
+    <p>The majority of the frontend code is located in the resources/js directory. You are free to modify any of the code to customize the appearance and behavior of your application:</p>
+    <br>
+    <img src="foto React 1.jpeg" alt="" width="500px">
+    <br>
+    <p>To publish additional shadcn components, first find the component you want to publish. Then, publish the component using npx: npx shadcn@latest add switch</p>
+    <br>
+    <p>In this example, the command will publish the Switch component to resources/js/components/ui/switch.tsx. Once the component has been published, you can use it in any of your pages:</p>
+    <br>
+    <img src="Foto react 2.jpeg" alt="" width="500px">
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Available Layouts</h5>
+    <p>The Vue starter kit includes two different primary layouts for you to choose from: a "sidebar" layout and a "header" layout. The sidebar layout is the default, but you can switch to the header layout by modifying the layout that is imported at the top of your application's resources/js/layouts/AppLayout.vue file:</p>
+    <br>
+    <img src="foto available layout.jpeg" alt="" width="500px">
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>sidebar variant</h5>
+    <br>
+    <p>The sidebar layout includes three different variants: the default sidebar variant, the "inset" variant, and the "floating" variant. You may choose the variant you like best by modifying the resources/js/components/AppSidebar.vue component:</p>
+    <br>
+    <img src="foto sidebar variant.jpeg" alt="" width="500px">
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Authentication Page Layout Variants</h5>
+    <br>
+    <p>The authentication pages included with the Vue starter kit, such as the login page and registration page, also offer three different layout variants: "simple", "card", and "split".</p>
+    <br>
+    <p>To change your authentication layout, modify the layout that is imported at the top of your application's resources/js/layouts/AuthLayout.vue file:</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Livewire</h5>
+    <br>
+    <p>Our Livewire starter kit is built with Livewire 3, Tailwind, and Flux UI. As with all of our starter kits, all of the backend and frontend code exists within your application to allow for full customization.</p>
+    <br>
+    <p>The majority of the frontend code is located in the resources/views directory. You are free to modify any of the code to customize the appearance and behavior of your application:</p>
+    <br>
+    <img src="foto livewire.jpeg" alt="" width="500px">
+    <br>
+    <p>The frontend code is located in the resouces/views directory, while the app/Livewire directory contains the corresponding backend logic for the Livewire components.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Available Layout</h5>
+    <br>
+    <p>The Livewire starter kit includes two different primary layouts for you to choose from: a "sidebar" layout and a "header" layout. The sidebar layout is the default, but you can switch to the header layout by modifying the layout that is used by your application's resources/views/components/layouts/app.blade.php file. In addition, you should add the container attribute to the main Flux component:</p>
+    <br>
+    <img src="foto available layout.jpeg" alt="" width="500px">
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Authentication page Layout variants</h5>
+    <br>
+    <p>The authentication pages included with the Livewire starter kit, such as the login page and registration page, also offer three different layout variants: "simple", "card", and "split".</p>
+    <br>
+    <p>To change your authentication layout, modify the layout that is used by your application's resources/views/components/layouts/auth.blade.php file:</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>WorkOS AuthKit Authentication</h5>
+    <br>
+    <p>By default, the React, Vue, and Livewire starter kits all utilize Laravel's built-in authentication system to offer login, registration, password reset, email verification, and more. In addition, we also offer a WorkOS AuthKit powered variant of each starter kit that offers:</p>
+    <br>
+    <li class="text-danger">Social authentication (Google, Microsoft, GitHub, and Apple)</li>
+    <li class="text-danger">Passkey authentication</li>
+    <li class="text-danger">Email based "Magic Auth"</li>
+    <li class="text-danger">SSO</li>
+    <br>
+    <p>Using WorkOS as your authentication provider requires a WorkOS account. WorkOS offers free authentication for applications up to 1 million monthly active users.</p>
+    <br>
+    <p>To use WorkOS AuthKit as your application's authentication provider, select the WorkOS option when creating your new starter kit powered application via laravel new.</p>
+    <br>
+    <p class="fw-bold">Configuring Your WorkOS Starter Kit</p>
+    <br>
+    <p>After creating a new application using a WorkOS powered starter kit, you should set the WORKOS_CLIENT_ID, WORKOS_API_KEY, and WORKOS_REDIRECT_URL environment variables in your application's .env file. These variables should match the values provided to you in the WorkOS dashboard for your application:</p>
+    <br>
+    <p>Additionally, you should configure the application homepage URL in your WorkOS dashboard. This URL is where users will be redirected after they log out of your application.</p>
+    <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Configuring AuthKit Authentication Methods</h5>
+     <br>
+     <p>When using a WorkOS powered starter kit, we recommend that you disable "Email + Password" authentication within your application's WorkOS AuthKit configuration settings, allowing users to only authenticate via social authentication providers, passkeys, "Magic Auth", and SSO. This allows your application to totally avoid handling user passwords.</p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Configuring AuthKit Session Timeouts</h5>
+     <br>
+     <p>In addition, we recommend that you configure your WorkOS AuthKit session inactivity timeout to match your Laravel application's configured session timeout threshold, which is typically two hours.</p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Inertia SSR</h5>
+     <br>
+     <p>The React and Vue starter kits are compatible with Inertia's server-side rendering capabilities. To build an Inertia SSR compatible bundle for your application, run the build:ssr command: npm run build:ssr</p>
+     <br>
+     <p>For convenience, a composer dev:ssr command is also available. This command will start the Laravel development server and Inertia SSR server after building an SSR compatible bundle for your application, allowing you to test your application locally using Inertia's server-side rendering engine: composer dev:ssr</p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Community Maintained Starter Kits</h5>
+     <br>
+     <p>When creating a new Laravel application using the Laravel installer, you may provide any community maintained starter kit available on Packagist to the --using flag: laravel new my-app --using=example/starter-kit</p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Creating Starter Kits</h5>
+     <br>
+     <p>To ensure your starter kit is available to others, you will need to publish it to Packagist. Your starter kit should define its required environment variables in its .env.example file, and any necessary post-installation commands should be listed in the post-create-project-cmd array of the starter kit's composer.json file.</p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Frequently Asked Question</h5>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>How do i Upgrade</h5>
+     <br>
+     <p>Every starter kit gives you a solid starting point for your next application. With full ownership of the code, you can tweak, customize, and build your application exactly as you envision. However, there is no need to update the starter kit itself.</p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>How do i enable verification</h5>
+     <br>
+     <p>Email verification can be added by uncommenting the MustVerifyEmail import in your App/Models/User.php model and ensuring the model implements the MustVerifyEmail interface:</p>
+     <br>
+     <img src="foto email verification 1.jpeg" alt="" width="500px">
+     <br>
+     <p>After registration, users will receive a verification email. To restrict access to certain routes until the user's email address is verified, add the verified middleware to the routes:</p>
+     <br>
+     <img src="foto email verification 2.jpeg" alt="" width="500px">
+     <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>How do i modify the default email template?</h5>
+    <br>
+    <p>You may want to customize the default email template to better align with your application's branding. To modify this template, you should publish the email views to your application with the following command: php artisan vendor:publish --tag=laravel-mail</p>
+    <br>
+    <p>This will generate several files in resources/views/vendor/mail. You can modify any of these files as well as the resources/views/vendor/mail/themes/default.css file to change the look and appearance of the default email template.</p>
+     
+  </div>
+
+
+  <footer class="bg-light text-center text-lg-start mt-5" style="margin-left: 250px; padding: 20px;">
+   <div class="container">
+      <div class="row">
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Resources</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Documentation</a>
+          <a href="" class="d-block text-decoration-none text-dark">Starter Kits</a>
+          <a href="" class="d-block text-decoration-none text-dark">Release Notes</a>
+        </div>
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Product</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Cloud</a>
+          <a href="" class="d-block text-decoration-none text-dark">Forge</a>
+          <a href="" class="d-block text-decoration-none text-dark">Vapor</a>
+        </div>
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Packages</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Cashier</a>
+          <a href="" class="d-block text-decoration-none text-dark">Dusk</a>
+        </div>
+        
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

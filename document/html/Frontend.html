@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    body {
+      overflow-x: hidden  ;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      width: 100%;
+      background-color: rgb(255, 255, 255);
+      color: red;
+      text-align: left;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .sidebar {
+      height: 100vh;
+      width: 250px;
+      position: fixed;
+      top: 50px;
+      left: 0;
+      background-color: #ffffff;
+      padding-top: 20px;
+      overflow-y: auto;
+    }
+
+    .sidebar a {
+      color: #000000;
+      padding: 15px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      background-color: #c41f1f;
+      color: #fff;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 80px 20px 20px; 
+    }
+
+    .submenu a {
+      padding-left: 30px;
+      background-color: #f8f9fa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+   Laravel
+  </div>
+
+  <div class="sidebar">
+    <a data-bs-toggle="collapse" href="#submenuPrologue" role="button" aria-expanded="false" aria-controls="submenuPrologue">
+      Prologue
+    </a>
+    <div class="collapse submenu" id="submenuPrologue">
+      <a href="Release Notes.html">Release Notes</a>
+      <a href="Upgrade Guide.html">Upgrade Guide</a>
+      <a href="Contribution Guide.html">Contribution Guide</a>
+    </div>
+
+    <a data-bs-toggle="collapse" href="#submenuGettingStarted" role="button" aria-expanded="false" aria-controls="submenuGettingStarted">
+      Getting Started
+    </a>
+    <div class="collapse submenu" id="submenuGettingStarted">
+      <a href="Installation.html">Installation</a>
+      <a href="Configuration.html">Configuration</a>
+      <a href="Directory Structure.html">Directory Structure</a>
+      <a href="#">Frontend</a>
+      <a href="Starter Kits.html">Starter Kits</a>
+      <a href="Deployment.html">Deployment</a>
+    </div>
+
+    <a data-bs-toggle="collapse" href="#submenuArchitecture" role="button" aria-expanded="false" aria-controls="submenuArchitecture">
+      Architecture Concepts
+    </a>
+    <div class="collapse submenu" id="submenuArchitecture">
+      <a href="Request Lifecycle.html">Request Life cycle</a>
+      <a href="">Service Container</a>
+      <a href="#">Service Providers</a>
+      <a href="#">Facades</a>
+    </div>
+
+    
+    <a href="">The basic</a>
+    <a href="">Digging Developer</a>
+    <a href="">Security</a>
+    <a href="">Data Base</a>
+    <a href="">Eloquent ORM</a>
+    <a href="">Testing</a>
+    <a href="">Packages</a>
+    <a href="">API Documentation</a>
+  </div>
+
+  <div class="main-content">
+    <h1>Frontend</h1>
+    <br>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Introduction</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>using PHP</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>PHP and Blade</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Livewire</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Starter kits</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Using React Or Vue</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Inertia</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Starter Kits</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Bundling assets</p> 
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Introduction</h5>
+    <br>
+    <p>Laravel is a backend framework that provides all of the features you need to build modern web applications, such as routing, validation, caching, queues, file storage, and more. However, we believe it's important to offer developers a beautiful full-stack experience, including powerful approaches for building your application's frontend.</p>
+    <br>
+    <p>There are two primary ways to tackle frontend development when building an application with Laravel, and which approach you choose is determined by whether you would like to build your frontend by leveraging PHP or by using JavaScript frameworks such as Vue and React. We'll discuss both of these options below so that you can make an informed decision regarding the best approach to frontend development for your application.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Using PHP</h5>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>PHP And Blade</h5>
+    <br>
+    <p>In the past, most PHP applications rendered HTML to the browser using simple HTML templates interspersed with PHP echo statements which render data that was retrieved from a database during the request:</p>
+    <br>
+    <img src="foto php and blade 1.jpeg" alt="" width="500px">
+    <br>
+    <p>In Laravel, this approach to rendering HTML can still be achieved using views and Blade. Blade is an extremely light-weight templating language that provides convenient, short syntax for displaying data, iterating over data, and more:</p>
+    <br>
+    <img src="foto php and blade 2.jpeg" alt="" width="500px">
+    <br>
+    <p>When building applications in this fashion, form submissions and other page interactions typically receive an entirely new HTML document from the server and the entire page is re-rendered by the browser. Even today, many applications may be perfectly suited to having their frontends constructed in this way using simple Blade templates.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Growing Expectation</h5>
+    <br>
+    <p>However, as user expectations regarding web applications have matured, many developers have found the need to build more dynamic frontends with interactions that feel more polished. In light of this, some developers choose to begin building their application's frontend using JavaScript frameworks such as Vue and React.</p>
+    <br>
+    <p>Others, preferring to stick with the backend language they are comfortable with, have developed solutions that allow the construction of modern web application UIs while still primarily utilizing their backend language of choice. For example, in the Rails ecosystem, this has spurred the creation of libraries such as Turbo Hotwire, and Stimulus.</p>
+    <br>
+    <p>Within the Laravel ecosystem, the need to create modern, dynamic frontends by primarily using PHP has led to the creation of Laravel Livewire and Alpine.js.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Livewire</h5>
+    <br>
+    <p>Laravel Livewire is a framework for building Laravel powered frontends that feel dynamic, modern, and alive just like frontends built with modern JavaScript frameworks like Vue and React.</p>
+    <br>
+    <p>When using Livewire, you will create Livewire "components" that render a discrete portion of your UI and expose methods and data that can be invoked and interacted with from your application's frontend. For example, a simple "Counter" component might look like the following:</p>
+    <br>
+    <img src="Foto Livewire 1.jpeg" alt="" width="500px">
+    <br>
+    <p>And, the corresponding template for the counter would be written like so:</p>
+    <br>
+    <img src="Foto Livewire 2.jpeg" alt="" width="500px">
+    <br>
+    <p>As you can see, Livewire enables you to write new HTML attributes such as wire:click that connect your Laravel application's frontend and backend. In addition, you can render your component's current state using simple Blade expressions.</p>
+    <br>
+    <p>For many, Livewire has revolutionized frontend development with Laravel, allowing them to stay within the comfort of Laravel while constructing modern, dynamic web applications. Typically, developers using Livewire will also utilize Alpine.js to "sprinkle" JavaScript onto their frontend only where it is needed, such as in order to render a dialog window.</p>
+    <br>
+    <p>If you're new to Laravel, we recommend getting familiar with the basic usage of views and Blade. Then, consult the official Laravel Livewire documentation to learn how to take your application to the next level with interactive Livewire components.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Starter kits</h5>
+    <br>
+    <p>If you would like to build your frontend using PHP and Livewire, you can leverage our Livewire starter kit to jump-start your application's development.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Using React or VUE</h5>
+    <br>
+    <p>Although it's possible to build modern frontends using Laravel and Livewire, many developers still prefer to leverage the power of a JavaScript framework like React or Vue. This allows developers to take advantage of the rich ecosystem of JavaScript packages and tools available via NPM.</p>
+    <br>
+    <p>However, without additional tooling, pairing Laravel with React or Vue would leave us needing to solve a variety of complicated problems such as client-side routing, data hydration, and authentication. Client-side routing is often simplified by using opinionated React / Vue frameworks such as Next and Nuxt; however, data hydration and authentication remain complicated and cumbersome problems to solve when pairing a backend framework like Laravel with these frontend frameworks.</p>
+    <br>
+    <p>In addition, developers are left maintaining two separate code repositories, often needing to coordinate maintenance, releases, and deployments across both repositories. While these problems are not insurmountable, we don't believe it's a productive or enjoyable way to develop applications.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Inertia</h5>
+    <br>
+    <p>Thankfully, Laravel offers the best of both worlds. Inertia bridges the gap between your Laravel application and your modern React or Vue frontend, allowing you to build full-fledged, modern frontends using React or Vue while leveraging Laravel routes and controllers for routing, data hydration, and authentication — all within a single code repository. With this approach, you can enjoy the full power of both Laravel and React / Vue without crippling the capabilities of either tool.</p>
+    <br>
+    <p>After installing Inertia into your Laravel application, you will write routes and controllers like normal. However, instead of returning a Blade template from your controller, you will return an Inertia page:</p>
+    <br>
+    <img src="Foto Inertia 1.jpeg" alt="" width="500px">
+    <br>
+    <p>An Inertia page corresponds to a React or Vue component, typically stored within the resources/js/pages directory of your application. The data given to the page via the Inertia::render method will be used to hydrate the "props" of the page component:</p>
+    <br>
+    <img src="foto inertia 2.jpeg" alt="" width="500px">
+    <br>
+    <p>As you can see, Inertia allows you to leverage the full power of React or Vue when building your frontend, while providing a light-weight bridge between your Laravel powered backend and your JavaScript powered frontend.</p>
+    <br>
+    <p class="fw-bold">Server-Side Rendering</p>
+    <br>
+    <p>If you're concerned about diving into Inertia because your application requires server-side rendering, don't worry. Inertia offers server-side rendering support. And, when deploying your application via Laravel Cloud or Laravel Forge, it's a breeze to ensure that Inertia's server-side rendering process is always running.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Starter kits</h5>
+    <br>
+    <p>If you would like to build your frontend using Inertia and Vue / React, you can leverage our React or Vue application starter kits to jump-start your application's development. Both of these starter kits scaffold your application's backend and frontend authentication flow using Inertia, Vue / React, Tailwind, and Vite so that you can start building your next big idea.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Bundling Assets</h5>
+    <br>
+    <p>Regardless of whether you choose to develop your frontend using Blade and Livewire or Vue / React and Inertia, you will likely need to bundle your application's CSS into production ready assets. Of course, if you choose to build your application's frontend with Vue or React, you will also need to bundle your components into browser ready JavaScript assets.</p>
+    <br>
+    <p>By default, Laravel utilizes Vite to bundle your assets. Vite provides lightning-fast build times and near instantaneous Hot Module Replacement (HMR) during local development. In all new Laravel applications, including those using our starter kits, you will find a vite.config.js file that loads our light-weight Laravel Vite plugin that makes Vite a joy to use with Laravel applications.</p>
+    <br>
+    <p>The fastest way to get started with Laravel and Vite is by beginning your application's development using our application starter kits, which jump-starts your application by providing frontend and backend authentication scaffolding.</p>
+
+
+
+
+
+
+  
+</div>
+
+
+  <footer class="bg-light text-center text-lg-start mt-5" style="margin-left: 250px; padding: 20px;">
+   <div class="container">
+      <div class="row">
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Resources</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Documentation</a>
+          <a href="" class="d-block text-decoration-none text-dark">Starter Kits</a>
+          <a href="" class="d-block text-decoration-none text-dark">Release Notes</a>
+        </div>
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Product</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Cloud</a>
+          <a href="" class="d-block text-decoration-none text-dark">Forge</a>
+          <a href="" class="d-block text-decoration-none text-dark">Vapor</a>
+        </div>
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Packages</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Cashier</a>
+          <a href="" class="d-block text-decoration-none text-dark">Dusk</a>
+        </div>
+        
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

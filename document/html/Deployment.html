@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deployment</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    body {
+      overflow-x: hidden  ;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      width: 100%;
+      background-color: rgb(255, 255, 255);
+      color: red;
+      text-align: left;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .sidebar {
+      height: 100vh;
+      width: 250px;
+      position: fixed;
+      top: 50px;
+      left: 0;
+      background-color: #ffffff;
+      padding-top: 20px;
+      overflow-y: auto;
+    }
+
+    .sidebar a {
+      color: #000000;
+      padding: 15px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      background-color: #c41f1f;
+      color: #fff;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 80px 20px 20px; 
+    }
+
+    .submenu a {
+      padding-left: 30px;
+      background-color: #f8f9fa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+   Laravel
+  </div>
+
+  <div class="sidebar">
+    <a data-bs-toggle="collapse" href="#submenuPrologue" role="button" aria-expanded="false" aria-controls="submenuPrologue">
+      Prologue
+    </a>
+    <div class="collapse submenu" id="submenuPrologue">
+      <a href="Release Notes.html">Release Notes</a>
+      <a href="Upgrade Guide.html">Upgrade Guide</a>
+      <a href="Contribution Guide.html">Contribution Guide</a>
+    </div>
+
+    <a data-bs-toggle="collapse" href="#submenuGettingStarted" role="button" aria-expanded="false" aria-controls="submenuGettingStarted">
+      Getting Started
+    </a>
+    <div class="collapse submenu" id="submenuGettingStarted">
+      <a href="Installation.html">Installation</a>
+      <a href="Configuration.html">Configuration</a>
+      <a href="Directory Structure.html">Directory Structure</a>
+      <a href="Frontend.html">Frontend</a>
+      <a href="Halaman 8.html">Starter Kits</a>
+      <a href="">Deployment</a>
+    </div>
+
+    <a data-bs-toggle="collapse" href="#submenuArchitecture" role="button" aria-expanded="false" aria-controls="submenuArchitecture">
+      Architecture Concepts
+    </a>
+    <div class="collapse submenu" id="submenuArchitecture">
+      <a href="Request Lifecycle.html">Request Life cycle</a>
+      <a href="#">Service Container</a>
+      <a href="#">Service Providers</a>
+      <a href="#">Facades</a>
+    </div>
+
+    
+    <a href="">The basic</a>
+    <a href="">Digging Developer</a>
+    <a href="">Security</a>
+    <a href="">Data Base</a>
+    <a href="">Eloquent ORM</a>
+    <a href="">Testing</a>
+    <a href="">Packages</a>
+    <a href="">API Documentation</a>
+  </div>
+
+  <div class="main-content">
+    <h1>Deployment</h1>
+    <br>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Introduction</p>
+    <br>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Server Requirements</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Server Configurationss</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Nginx</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>FrankenPHP</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Directory Permissions</p>
+   <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Optimization</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Caching Configuration</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Caching Events</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Caching Routes</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Caching  Views</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Debug Mode</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The Health Route</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Deploying With Laravel Cloud or Forge</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Introduction</h5>
+    <br>
+    <p>When you're ready to deploy your Laravel application to production, there are some important things you can do to make sure your application is running as efficiently as possible. In this document, we'll cover some great starting points for making sure your Laravel application is deployed properly.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Server Requirements</h5>
+    <br>
+    <p>The Laravel framework has a few system requirements. You should ensure that your web server has the following minimum PHP version and extensions:</p>
+    <br>
+    <li class="text-danger">PHP >= 8.2</li>
+    <li class="text-danger">Ctype PHP Extension</li>
+    <li class="text-danger">cURL PHP Extension</li>
+    <li class="text-danger">DOM PHP Extension</li>
+    <li class="text-danger">Fileinfo PHP Extension</li>
+    <li class="text-danger">Filter PHP Extension</li>
+    <li class="text-danger">Hash PHP Extension</li>
+    <li class="text-danger">Mbstring PHP Extension</li>
+    <li class="text-danger">OpenSSL PHP Extension</li>
+    <li class="text-danger">PCRE PHP Extension</li>
+    <li class="text-danger">PDO PHP Extension</li>
+    <li class="text-danger">Session PHP Extension</li>
+    <li class="text-danger">Tokenizer PHP Extension</li>
+    <li class="text-danger">XML PHP Extension</li>
+    <br>
+    <h4 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Server Configuration</h4>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Nginx</h5>
+    <br>
+    <p>If you are deploying your application to a server that is running Nginx, you may use the following configuration file as a starting point for configuring your web server. Most likely, this file will need to be customized depending on your server's configuration. If you would like assistance in managing your server, consider using a fully-managed Laravel platform like Laravel Cloud.</p>
+    <br>
+    <p>Please ensure, like the configuration below, your web server directs all requests to your application's public/index.php file. You should never attempt to move the index.php file to your project's root, as serving the application from the project root will expose many sensitive configuration files to the public Internet:</p>
+    <br>
+    <img src="foto Nginx.jpeg" alt="" width="500px">
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>FrankenPHP</h5>
+    <br>
+    <p>FrankenPHP may also be used to serve your Laravel applications. FrankenPHP is a modern PHP application server written in Go. To serve a Laravel PHP application using FrankenPHP, you may simply invoke its php-server command: frankenphp php-server -r public/</p>
+    <br>
+    <p>To take advantage of more powerful features supported by FrankenPHP, such as its Laravel Octane integration, HTTP/3, modern compression, or the ability to package Laravel applications as standalone binaries, please consult FrankenPHP's Laravel documentation.</p>
+    <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>FrankenPHP</h5>
+     <br>
+     <p>FrankenPHP may also be used to serve your Laravel applications. FrankenPHP is a modern PHP application server written in Go. To serve a Laravel PHP application using FrankenPHP, you may simply invoke its php-server command: frankenphp php-server -r public/</p>
+     <br>
+     <p>To take advantage of more powerful features supported by FrankenPHP, such as its Laravel Octane integration, HTTP/3, modern compression, or the ability to package Laravel applications as standalone binaries, please consult FrankenPHP's Laravel documentation.</p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Directory Permissions</h5>
+     <br>
+     <p>Laravel will need to write to the bootstrap/cache and storage directories, so you should ensure the web server process owner has permission to write to these directories</p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Optimization</h5>
+     <br>
+     <p>When deploying your application to production, there are a variety of files that should be cached, including your configuration, events, routes, and views. Laravel provides a single, convenient optimize Artisan command that will cache all of these files. This command should typically be invoked as part of your application's deployment process: php artisan optimize</p>
+     <br>
+     <p>The optimize:clear method may be used to remove all of the cache files generated by the optimize command as well as all keys in the default cache driver: php artisan optimize:clear</p>
+     <br>
+     <p>In the following documentation, we will discuss each of the granular optimization commands that are executed by the optimize command.</p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Caching Configuration</h5>
+     <br>
+     <p>When deploying your application to production, you should make sure that you run the config:cache Artisan command during your deployment process: php artisan config:cache</p>
+     <br>
+     <p>This command will combine all of Laravel's configuration files into a single, cached file, which greatly reduces the number of trips the framework must make to the filesystem when loading your configuration values.</p>
+     <br>
+     <p class="fw-bold">If you execute the config:cache command during your deployment process, you should be sure that you are only calling the env function from within your configuration files. Once the configuration has been cached, the .env file will not be loaded and all calls to the env function for .env variables will return null.</p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Caching Events</h5>
+     <p>You should cache your application's auto-discovered event to listener mappings during your deployment process. This can be accomplished by invoking the event:cache Artisan command during deployment: php artisan event:cache</p>
+     <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Caching Routes</h5>
+    <br>
+    <p>If you are building a large application with many routes, you should make sure that you are running the route:cache Artisan command during your deployment process: php artisan route:cache</p>
+    <br>
+    <p>This command reduces all of your route registrations into a single method call within a cached file, improving the performance of route registration when registering hundreds of routes.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Caching views</h5>
+    <br>
+    <p>When deploying your application to production, you should make sure that you run the view:cache Artisan command during your deployment process: php artisan view:cache</p>
+    <br>
+    <p>This command precompiles all your Blade views so they are not compiled on demand, improving the performance of each request that returns a view.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Debug Mode</h5>
+    <br>
+    <p>The debug option in your config/app.php configuration file determines how much information about an error is actually displayed to the user. By default, this option is set to respect the value of the APP_DEBUG environment variable, which is stored in your application's .env file.</p>
+    <br>
+    <p class="fw-bold">In your production environment, this value should always be false. If the APP_DEBUG variable is set to true in production, you risk exposing sensitive configuration values to your application's end users.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The Health Route</h5>
+    <br>
+    <p>Laravel includes a built-in health check route that can be used to monitor the status of your application. In production, this route may be used to report the status of your application to an uptime monitor, load balancer, or orchestration system such as Kubernetes.</p>
+    <br>
+    <p>By default, the health check route is served at /up and will return a 200 HTTP response if the application has booted without exceptions. Otherwise, a 500 HTTP response will be returned. You may configure the URI for this route in your application's bootstrap/app file:</p>
+    <br>
+    <img src="foto health route.jpeg" alt="" width="500px">
+    <br>
+    <p>When HTTP requests are made to this route, Laravel will also dispatch a Illuminate\Foundation\Events\DiagnosingHealth event, allowing you to perform additional health checks relevant to your application. Within a listener for this event, you may check your application's database or cache status. If you detect a problem with your application, you may simply throw an exception from the listener.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Deploying With Laravel Cloud or Forge</h5>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Laravel Cloud</h5>
+    <br>
+    <p>If you would like a fully-managed, auto-scaling deployment platform tuned for Laravel, check out Laravel Cloud. Laravel Cloud is a robust deployment platform for Laravel, offering managed compute, databases, caches, and object storage.</p>
+    <br>
+    <p>Launch your Laravel application on Cloud and fall in love with the scalable simplicity. Laravel Cloud is fine-tuned by Laravel's creators to work seamlessly with the framework so you can keep writing your Laravel applications exactly like you're used to.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Laravel Forge</h5>
+    <br>
+    <p>If you prefer to manage your own servers but aren't comfortable configuring all of the various services needed to run a robust Laravel application, Laravel Forge is a VPS server management platform for Laravel applications.</p>
+    <br>
+    <p>Laravel Forge can create servers on various infrastructure providers such as DigitalOcean, Linode, AWS, and more. In addition, Forge installs and manages all of the tools needed to build robust Laravel applications, such as Nginx, MySQL, Redis, Memcached, Beanstalk, and more.</p>
+  
+</div>
+
+
+  <footer class="bg-light text-center text-lg-start mt-5" style="margin-left: 250px; padding: 20px;">
+   <div class="container">
+      <div class="row">
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Resources</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Documentation</a>
+          <a href="" class="d-block text-decoration-none text-dark">Starter Kits</a>
+          <a href="" class="d-block text-decoration-none text-dark">Release Notes</a>
+        </div>
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Product</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Cloud</a>
+          <a href="" class="d-block text-decoration-none text-dark">Forge</a>
+          <a href="" class="d-block text-decoration-none text-dark">Vapor</a>
+        </div>
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Packages</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Cashier</a>
+          <a href="" class="d-block text-decoration-none text-dark">Dusk</a>
+        </div>
+        
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request Lifecycle</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    body {
+      overflow-x: hidden  ;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      width: 100%;
+      background-color: rgb(255, 255, 255);
+      color: red;
+      text-align: left;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .sidebar {
+      height: 100vh;
+      width: 250px;
+      position: fixed;
+      top: 50px;
+      left: 0;
+      background-color: #ffffff;
+      padding-top: 20px;
+      overflow-y: auto;
+    }
+
+    .sidebar a {
+      color: #000000;
+      padding: 15px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      background-color: #c41f1f;
+      color: #fff;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 80px 20px 20px; 
+    }
+
+    .submenu a {
+      padding-left: 30px;
+      background-color: #f8f9fa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+   Laravel
+  </div>
+
+  <div class="sidebar">
+    <a data-bs-toggle="collapse" href="#submenuPrologue" role="button" aria-expanded="false" aria-controls="submenuPrologue">
+      Prologue
+    </a>
+    <div class="collapse submenu" id="submenuPrologue">
+      <a href="Release Notes.html">Release Notes</a>
+      <a href="Upgrade Guide.html">Upgrade Guide</a>
+      <a href="Contribution Guide.html">Contribution Guide</a>
+    </div>
+
+    <a data-bs-toggle="collapse" href="#submenuGettingStarted" role="button" aria-expanded="false" aria-controls="submenuGettingStarted">
+      Getting Started
+    </a>
+    <div class="collapse submenu" id="submenuGettingStarted">
+      <a href="Installation.html">Installation</a>
+      <a href="Configuration.html">Configuration</a>
+      <a href="Directory Structure.html">Directory Structure</a>
+      <a href="Frontend.html">Frontend</a>
+      <a href="Starter Kits.html">Starter Kits</a>
+      <a href="Deployment.html">Deployment</a>
+    </div>
+
+    <a data-bs-toggle="collapse" href="#submenuArchitecture" role="button" aria-expanded="false" aria-controls="submenuArchitecture">
+      Architecture Concepts
+    </a>
+    <div class="collapse submenu" id="submenuArchitecture">
+      <a href="#">Request Life cycle</a>
+      <a href="#">Service Container</a>
+      <a href="#">Service Providers</a>
+      <a href="#">Facades</a>
+    </div>
+
+    
+    <a href="">The basic</a>
+    <a href="">Digging Developer</a>
+    <a href="">Security</a>
+    <a href="">Data Base</a>
+    <a href="">Eloquent ORM</a>
+    <a href="">Testing</a>
+    <a href="">Packages</a>
+    <a href="">API Documentation</a>
+  </div>
+
+  <div class="main-content">
+    <h1>Request Live Cycle</h1>
+    <br>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Introduction</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Lifecycle Overview</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>First Steps</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>HTTP / Console Kernels</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Service Providers</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Routing</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Finishing Up</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Focus on Service Providers</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Introduction</h5>
+    <br>
+    <p>When using any tool in the "real world", you feel more confident if you understand how that tool works. Application development is no different. When you understand how your development tools function, you feel more comfortable and confident using them.</p>
+    <br>
+    <p>The goal of this document is to give you a good, high-level overview of how the Laravel framework works. By getting to know the overall framework better, everything feels less "magical" and you will be more confident building your applications. If you don't understand all of the terms right away, don't lose heart! Just try to get a basic grasp of what is going on, and your knowledge will grow as you explore other sections of the documentation.</p>
+    <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Lifecycle Overview</h5>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>First Steps</h5>
+     <p>The entry point for all requests to a Laravel application is the public/index.php file. All requests are directed to this file by your web server (Apache / Nginx) configuration. The index.php file doesn't contain much code. Rather, it is a starting point for loading the rest of the framework.</p>
+     <br>
+     <p>The index.php file loads the Composer generated autoloader definition, and then retrieves an instance of the Laravel application from bootstrap/app.php. The first action taken by Laravel itself is to create an instance of the application / service container.</p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>HTTP / Console Kernels</h5>
+     <br>
+     <p>Next, the incoming request is sent to either the HTTP kernel or the console kernel, using the handleRequest or handleCommand methods of the application instance, depending on the type of request entering the application. These two kernels serve as the central location through which all requests flow. For now, let's just focus on the HTTP kernel, which is an instance of Illuminate\Foundation\Http\Kernel.</p>
+     <br>
+     <p>The HTTP kernel defines an array of bootstrappers that will be run before the request is executed. These bootstrappers configure error handling, configure logging, detect the application environment, and perform other tasks that need to be done before the request is actually handled. Typically, these classes handle internal Laravel configuration that you do not need to worry about.</p>
+     <br>
+     <p>The HTTP kernel is also responsible for passing the request through the application's middleware stack. These middleware handle reading and writing the HTTP session, determining if the application is in maintenance mode, verifying the CSRF token, and more. We'll talk more about these soon.</p>
+     <br>
+     <p>The method signature for the HTTP kernel's handle method is quite simple: it receives a Request and returns a Response. Think of the kernel as being a big black box that represents your entire application. Feed it HTTP requests and it will return HTTP responses.</p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Service Profider</h5>
+     <br>
+     <p>One of the most important kernel bootstrapping actions is loading the service providers for your application. Service providers are responsible for bootstrapping all of the framework's various components, such as the database, queue, validation, and routing components.</p>
+     <br>
+     <p>Laravel will iterate through this list of providers and instantiate each of them. After instantiating the providers, the register method will be called on all of the providers. Then, once all of the providers have been registered, the boot method will be called on each provider. This is so service providers may depend on every container binding being registered and available by the time their boot method is executed.</p>
+     <br>
+     <p>Essentially every major feature offered by Laravel is bootstrapped and configured by a service provider. Since they bootstrap and configure so many features offered by the framework, service providers are the most important aspect of the entire Laravel bootstrap process.</p>
+     <br>
+     <p>While the framework internally uses dozens of service providers, you also have the option to create your own. You can find a list of the user-defined or third-party service providers that your application is using in the bootstrap/providers.php file.</p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Routing</h5>
+     <br>
+     <p>Once the application has been bootstrapped and all service providers have been registered, the Request will be handed off to the router for dispatching. The router will dispatch the request to a route or controller, as well as run any route specific middleware.</p>
+     <br>
+     <p>Middleware provide a convenient mechanism for filtering or examining HTTP requests entering your application. For example, Laravel includes a middleware that verifies if the user of your application is authenticated. If the user is not authenticated, the middleware will redirect the user to the login screen. However, if the user is authenticated, the middleware will allow the request to proceed further into the application. Some middleware are assigned to all routes within the application, like PreventRequestsDuringMaintenance, while some are only assigned to specific routes or route groups. You can learn more about middleware by reading the complete middleware documentation.</p>
+     <br>
+     <p>If the request passes through all of the matched route's assigned middleware, the route or controller method will be executed and the response returned by the route or controller method will be sent back through the route's chain of middleware.</p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Finishing Up</h5>
+     <br>
+     <p>Once the route or controller method returns a response, the response will travel back outward through the route's middleware, giving the application a chance to modify or examine the outgoing response.</p>
+     <br>
+     <p>Finally, once the response travels back through the middleware, the HTTP kernel's handle method returns the response object to the handleRequest of the application instance, and this method calls the send method on the returned response. The send method sends the response content to the user's web browser. We've now completed our journey through the entire Laravel request lifecycle!
+     </p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Focus on Service Providers</h5>
+     <br>
+     <p>Service providers are truly the key to bootstrapping a Laravel application. The application instance is created, the service providers are registered, and the request is handed to the bootstrapped application. It's really that simple!</p>
+     <br>
+     <p>Having a firm grasp of how a Laravel application is built and bootstrapped via service providers is very valuable. Your application's user-defined service providers are stored in the app/Providers directory.</p>
+     <br>
+     <p>By default, the AppServiceProvider is fairly empty. This provider is a great place to add your application's own bootstrapping and service container bindings. For large applications, you may wish to create several service providers, each with more granular bootstrapping for specific services used by your application.</p>
+     <br>
+
+
+    
+    
+</div>
+
+
+  <footer class="bg-light text-center text-lg-start mt-5" style="margin-left: 250px; padding: 20px;">
+    <div class="container">
+      <div class="row">
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Resources</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Documentation</a>
+          <a href="" class="d-block text-decoration-none text-dark">Starter Kits</a>
+          <a href="" class="d-block text-decoration-none text-dark">Release Notes</a>
+        </div>
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Product</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Cloud</a>
+          <a href="" class="d-block text-decoration-none text-dark">Forge</a>
+          <a href="" class="d-block text-decoration-none text-dark">Vapor</a>
+        </div>
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Packages</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Cashier</a>
+          <a href="" class="d-block text-decoration-none text-dark">Dusk</a>
+        </div>
+        
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

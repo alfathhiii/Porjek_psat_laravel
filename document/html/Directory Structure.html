@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Directory Structure</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    body {
+      overflow-x: hidden  ;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      width: 100%;
+      background-color: rgb(255, 255, 255);
+      color: red;
+      text-align: left;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .sidebar {
+      height: 100vh;
+      width: 250px;
+      position: fixed;
+      top: 50px;
+      left: 0;
+      background-color: #ffffff;
+      padding-top: 20px;
+      overflow-y: auto;
+    }
+
+    .sidebar a {
+      color: #000000;
+      padding: 15px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      background-color: #c41f1f;
+      color: #fff;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 80px 20px 20px; 
+    }
+
+    .submenu a {
+      padding-left: 30px;
+      background-color: #f8f9fa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+   Laravel
+  </div>
+
+  <div class="sidebar">
+    <a data-bs-toggle="collapse" href="#submenuPrologue" role="button" aria-expanded="false" aria-controls="submenuPrologue">
+      Prologue
+    </a>
+    <div class="collapse submenu" id="submenuPrologue">
+      <a href="Release Notes.html">Release Notes</a>
+      <a href="Upgrade Guide.html">Upgrade Guide</a>
+      <a href="Contribution Guide.html">Contribution Guide</a>
+    </div>
+
+    <a data-bs-toggle="collapse" href="#submenuGettingStarted" role="button" aria-expanded="false" aria-controls="submenuGettingStarted">
+      Getting Started
+    </a>
+    <div class="collapse submenu" id="submenuGettingStarted">
+      <a href="Installation.html">Installation</a>
+      <a href="Configuration.html">Configuration</a>
+      <a href="#">Directory Structure</a>
+      <a href="Frontend.html">Frontend</a>
+      <a href="Starter Kits.html">Starter Kits</a>
+      <a href="Deployment.html">Deployment</a>
+    </div>
+
+    <a data-bs-toggle="collapse" href="#submenuArchitecture" role="button" aria-expanded="false" aria-controls="submenuArchitecture">
+     Architecture Concepts
+    </a>
+    <div class="collapse submenu" id="submenuArchitecture">
+      <a href="Request Lifecycle.html">Request Life cycle</a>
+      <a href="#">Service Container</a>
+      <a href="#">Service Providers</a>
+      <a href="#">Facades</a>
+    </div>
+
+    
+    <a href="">The basic</a>
+    <a href="">Digging Developer</a>
+    <a href="">Security</a>
+    <a href="">Data Base</a>
+    <a href="">Eloquent ORM</a>
+    <a href="">Testing</a>
+    <a href="">Packages</a>
+    <a href="">API Documentation</a>
+  </div>
+
+  <div class="main-content">
+    <h1>Directory Structure</h1>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Introduction</h5>
+    <br>
+    <p>The default Laravel application structure is intended to provide a great starting point for both large and small applications. But you are free to organize your application however you like. Laravel imposes almost no restrictions on where any given class is located - as long as Composer can autoload the class.</p>
+    <br>
+    <h4 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The root directory</h4>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The app directory</h5>
+    <br>
+    <p>The app directory contains the core code of your application. We'll explore this directory in more detail soon; however, almost all of the classes in your application will be in this directory.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The Bootstrap Directory</h5>
+    <br>
+    <p>The bootstrap directory contains the app.php file which bootstraps the framework. This directory also houses a cache directory which contains framework generated files for performance optimization such as the route and services cache files.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The config directory</h5>
+    <br>
+    <p>The config directory, as the name implies, contains all of your application's configuration files. It's a great idea to read through all of these files and familiarize yourself with all of the options available to you.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The Database directory</h5>
+    <p>The database directory contains your database migrations, model factories, and seeds. If you wish, you may also use this directory to hold an SQLite database.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The Publik directory</h5>
+    <br>
+    <p>The public directory contains the index.php file, which is the entry point for all requests entering your application and configures autoloading. This directory also houses your assets such as images, JavaScript, and CSS.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The Resources directory</h5>
+    <br>
+    <p>The resources directory contains your views as well as your raw, un-compiled assets such as CSS or JavaScript.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The routes directory</h5>
+    <br>
+    <p>The routes directory contains all of the route definitions for your application. By default, two route files are included with Laravel: web.php and console.php</p>
+    <br>
+    <p>The web.php file contains routes that Laravel places in the web middleware group, which provides session state, CSRF protection, and cookie encryption. If your application does not offer a stateless, RESTful API then all your routes will most likely be defined in the web.php file.</p>
+    <br>
+    <p>The console.php file is where you may define all of your closure-based console commands. Each closure is bound to a command instance allowing a simple approach to interacting with each command's IO methods. Even though this file does not define HTTP routes, it defines console based entry points (routes) into your application. You may also schedule tasks in the console.php file.</p>
+    <br>
+    <p>Optionally, you may install additional route files for API routes (api.php) and broadcasting channels (channels.php), via the install:api and install:broadcasting Artisan commands.</p>
+    <br>
+    <p>The api.php file contains routes that are intended to be stateless, so requests entering the application through these routes are intended to be authenticated via tokens and will not have access to session state</p>
+    <br>
+    <p>The channels.php file is where you may register all of the event broadcasting channels that your application supports.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The storage directory</h5>
+    <br>
+    <p>The storage directory contains your logs, compiled Blade templates, file based sessions, file caches, and other files generated by the framework. This directory is segregated into app, framework, and logs directories. The app directory may be used to store any files generated by your application. The framework directory is used to store framework generated files and caches. Finally, the logs directory contains your application's log files.</p>
+    <br>
+    <p>The storage/app/public directory may be used to store user-generated files, such as profile avatars, that should be publicly accessible. You should create a symbolic link at public/storage which points to this directory. You may create the link using the php artisan storage:link Artisan command.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The Test directory</h5>
+    <br>
+    <p>The tests directory contains your automated tests. Example Pest or PHPUnit unit tests and feature tests are provided out of the box. Each test class should be suffixed with the word Test. You may run your tests using the /vendor/bin/pest or /vendor/bin/phpunit commands. Or, if you would like a more detailed and beautiful representation of your test results, you may run your tests using the php artisan test Artisan command.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The vendor directory</h5>
+    <br>
+    <p>The vendor directory contains your Composer dependencies.
+    </p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The App directory</h5>
+    <br>
+    <p>The majority of your application is housed in the app directory. By default, this directory is namespaced under App and is autoloaded by Composer using the PSR-4 autoloading standard.</p>
+    <br>
+    <p>By default, the app directory contains the Http, Models, and Providers directories. However, over time, a variety of other directories will be generated inside the app directory as you use the make Artisan commands to generate classes. For example, the app/Console directory will not exist until you execute the make:command Artisan command to generate a command class.</p>
+    <br>
+    <p>Both the Console and Http directories are further explained in their respective sections below, but think of the Console and Http directories as providing an API into the core of your application. The HTTP protocol and CLI are both mechanisms to interact with your application, but do not actually contain application logic. In other words, they are two ways of issuing commands to your application. The Console directory contains all of your Artisan commands, while the Http directory contains your controllers, middleware, and requests.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The broadcasting directory</h5>
+    <br>
+    <p>The Broadcasting directory contains all of the broadcast channel classes for your application. These classes are generated using the make:channel command. This directory does not exist by default, but will be created for you when you create your first channel. To learn more about channels, check out the documentation on event broadcasting.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The console directory</h5>
+    <br>
+    <p>The Console directory contains all of the custom Artisan commands for your application. These commands may be generated using the make:command command.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The events directory</h5>
+    <br>
+    <p>This directory does not exist by default, but will be created for you by the event:generate and make:event Artisan commands. The Events directory houses event classes. Events may be used to alert other parts of your application that a given action has occurred, providing a great deal of flexibility and decoupling.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The exception directory</h5>
+    <br>
+    <p>The Exceptions directory contains all of the custom exceptions for your application. These exceptions may be generated using the make:exception command.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The http directory</h5>
+    <br>
+    <p>The Http directory contains your controllers, middleware, and form requests. Almost all of the logic to handle requests entering your application will be placed in this directory.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The jobs directory</h5>
+    <br>
+    <p>This directory does not exist by default, but will be created for you if you execute the make:job Artisan command. The Jobs directory houses the queueable jobs for your application. Jobs may be queued by your application or run synchronously within the current request lifecycle. Jobs that run synchronously during the current request are sometimes referred to as "commands" since they are an implementation of the command pattern.</p>
+    <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The listeners directory</h5>
+     <p>This directory does not exist by default, but will be created for you if you execute the event:generate or make:listener Artisan commands. The Listeners directory contains the classes that handle your events. Event listeners receive an event instance and perform logic in response to the event being fired. For example, a UserRegistered event might be handled by a SendWelcomeEmail listener.</p>
+
+
+
+  </div>
+
+  <footer class="bg-light text-center text-lg-start mt-5" style="margin-left: 250px; padding: 20px;">
+   <div class="container">
+      <div class="row">
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Resources</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Documentation</a>
+          <a href="" class="d-block text-decoration-none text-dark">Starter Kits</a>
+          <a href="" class="d-block text-decoration-none text-dark">Release Notes</a>
+        </div>
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Product</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Cloud</a>
+          <a href="" class="d-block text-decoration-none text-dark">Forge</a>
+          <a href="" class="d-block text-decoration-none text-dark">Vapor</a>
+        </div>
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Packages</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Cashier</a>
+          <a href="" class="d-block text-decoration-none text-dark">Dusk</a>
+        </div>
+        
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

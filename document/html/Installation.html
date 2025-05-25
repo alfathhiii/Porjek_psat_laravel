@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    body {
+      overflow-x: hidden  ;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      width: 100%;
+      background-color: rgb(255, 255, 255);
+      color: red;
+      text-align: left;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .sidebar {
+      height: 100vh;
+      width: 250px;
+      position: fixed;
+      top: 50px;
+      left: 0;
+      background-color: #ffffff;
+      padding-top: 20px;
+      overflow-y: auto;
+    }
+
+    .sidebar a {
+      color: #000000;
+      padding: 15px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      background-color: #c41f1f;
+      color: #fff;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 80px 20px 20px; 
+    }
+
+    .submenu a {
+      padding-left: 30px;
+      background-color: #f8f9fa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+   Laravel
+  </div>
+
+  <div class="sidebar">
+    <a data-bs-toggle="collapse" href="#submenuPrologue" role="button" aria-expanded="false" aria-controls="submenuPrologue">
+      Prologue
+    </a>
+    <div class="collapse submenu" id="submenuPrologue">
+      <a href="Release Notes.html">Release Notes</a>
+      <a href="Upgrade Guide.html">Upgrade Guide</a>
+      <a href="Contribution Guide.html">Contribution Guide</a>
+    </div>
+
+    <a data-bs-toggle="collapse" href="#submenuGettingStarted" role="button" aria-expanded="false" aria-controls="submenuGettingStarted">
+      Getting Started
+    </a>
+    <div class="collapse submenu" id="submenuGettingStarted">
+      <a href="#">Installation</a>
+      <a href="Configuration.html">Configuration</a>
+      <a href="Directory Structure.html">Directory Structure</a>
+      <a href="Frontend.html">Frontend</a>
+      <a href="Starter Kits.html">Starter Kits</a>
+      <a href="Deployment.html">Deployment</a>
+    </div>
+
+    <a data-bs-toggle="collapse" href="#submenuArchitecture" role="button" aria-expanded="false" aria-controls="submenuArchitecture">
+      Architecture Concepts
+    </a>
+    <div class="collapse submenu" id="submenuArchitecture">
+      <a href="Request Lifecycle.html">Request Life cycle</a>
+      <a href="#">Service Container</a>
+      <a href="#">Service Providers</a>
+      <a href="#">Facades</a>
+    </div>
+
+    
+    <a href="">The basic</a>
+    <a href="">Digging Developer</a>
+    <a href="">Security</a>
+    <a href="">Data Base</a>
+    <a href="">Eloquent ORM</a>
+    <a href="">Testing</a>
+    <a href="">Packages</a>
+    <a href="">API Documentation</a>
+  </div>
+
+  <div class="main-content">
+    <h1>Installation</h1>
+    <br>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Meet Laravel</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Why Laravel</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Creating A Laravel Application</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Installing PHP and Laravel Installer</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Creating Application</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Initial Configuration</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Environtment Basic Configuration</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Database and Gration</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Directory Configurations</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Installation Using Herd</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Herd on MacOS</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Herd on Windows</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>IDE Suppport</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Next Step</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Laravel Full stack Framework</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Meet Laravel</h5>
+    <br>
+    <p>Laravel is a web application framework with expressive, elegant syntax. A web framework provides a structure and starting point for creating your application, allowing you to focus on creating something amazing while we sweat the details.</p>
+    <br>
+    <p>Laravel strives to provide an amazing developer experience while providing powerful features such as thorough dependency injection, an expressive database abstraction layer, queues and scheduled jobs, unit and integration testing, and more.</p>
+    <br>
+    <p>Whether you are new to PHP web frameworks or have years of experience, Laravel is a framework that can grow with you. We'll help you take your first steps as a web developer or give you a boost as you take your expertise to the next level. We can't wait to see what you build.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Why Laravel</h5>
+    <br>
+    <p>There are a variety of tools and frameworks available to you when building a web application. However, we believe Laravel is the best choice for building modern, full-stack web applications.</p>
+    <br>
+    <p class="fw-bold">A Progressive Framework</p>
+    <br>
+    <p>We like to call Laravel a "progressive" framework. By that, we mean that Laravel grows with you. If you're just taking your first steps into web development, Laravel's vast library of documentation, guides, and video tutorials will help you learn the ropes without becoming overwhelmed. If you're a senior developer, Laravel gives you robust tools for dependency injection, unit testing, queues, real-time events, and more. Laravel is fine-tuned for building professional web applications and ready to handle enterprise work loads.</p>
+    <br>
+    <p class="fw-bold">A Scalable Framework</p>
+    <br>
+    <p>Laravel is incredibly scalable. Thanks to the scaling-friendly nature of PHP and Laravel's built-in support for fast, distributed cache systems like Redis, horizontal scaling with Laravel is a breeze. In fact, Laravel applications have been easily scaled to handle hundreds of millions of requests per month. Need extreme scaling? Platforms like Laravel Cloud allow you to run your Laravel application at nearly limitless scale.</p>
+    <br>
+    <p class="fw-bold">A Community Framework</p>
+    <br>
+    <p>Laravel combines the best packages in the PHP ecosystem to offer the most robust and developer friendly framework available. In addition, thousands of talented developers from around the world have contributed to the framework. Who knows, maybe you'll even become a Laravel contributor.</p>
+    <br>
+    <h4 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Creating a Laravel Application</h4>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Installing PHP and the Laravel Installer</h5>
+    <p>Before creating your first Laravel application, make sure that your local machine has PHP, Composer, and the Laravel installer installed. In addition, you should install either Node and NPM or Bun so that you can compile your application's frontend assets.</p>
+    <br>
+    <p>If you don't have PHP and Composer installed on your local machine, the following commands will install PHP, Composer, and the Laravel installer on macOS, Windows, or Linux:</p>
+    <br>
+    <p>After running one of the commands above, you should restart your terminal session. To update PHP, Composer, and the Laravel installer after installing them via php.new, you can re-run the command in your terminal.</p>
+    <br>
+    <p>If you already have PHP and Composer installed, you may install the Laravel installer via Composer:</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Creating an Application</h5>
+    <br>
+    <p>After you have installed PHP, Composer, and the Laravel installer, you're ready to create a new Laravel application. The Laravel installer will prompt you to select your preferred testing framework, database, and starter kit</p>
+    <br>
+    <p>Once the application has been created, you can start Laravel's local development server, queue worker, and Vite development server using the dev Composer script:</p>
+    <br>
+    <img src="foto creating an application.jpeg" alt="" width="500px">
+    <br>
+    <p>Once you have started the development server, your application will be accessible in your web browser at http://localhost:8000. Next, you're ready to start taking your next steps into the Laravel ecosystem. Of course, you may also want to configure a database.</p>
+    <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Initial configuration</h5>
+    <p>All of the configuration files for the Laravel framework are stored in the config directory. Each option is documented, so feel free to look through the files and get familiar with the options available to you. Laravel needs almost no additional configuration out of the box. You are free to get started developing! However, you may wish to review the config/app.php file and its documentation. It contains several options such as url and locale that you may wish to change according to your application.</p>
+    <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Environment Based Configuration</h5>
+     <br>
+     <p>Since many of Laravel's configuration option values may vary depending on whether your application is running on your local machine or on a production web server, many important configuration values are defined using the .env file that exists at the root of your application. Your .env file should not be committed to your application's source control, since each developer / server using your application could require a different environment configuration. Furthermore, this would be a security risk in the event an intruder gains access to your source control repository, since any sensitive credentials would be exposed.</p>
+     <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Databases and Migrations</h5>
+    <br>
+    <p>Now that you have created your Laravel application, you probably want to store some data in a database. By default, your application's .env configuration file specifies that Laravel will be interacting with an SQLite database.</p>
+    <br>
+    <p>During the creation of the application, Laravel created a database/database.sqlite file for you, and ran the necessary migrations to create the application's database tables.</p>
+    <br>
+    <p>If you prefer to use another database driver such as MySQL or PostgreSQL, you can update your .env configuration file to use the appropriate database. For example, if you wish to use MySQL, update your .env configuration file's DB_* variables like so:</p>
+    <br>
+    <img src="foto db and migrations.jpeg" alt="" width="500px">
+    <br>
+    <p>If you choose to use a database other than SQLite, you will need to create the database and run your application's database migrations:</p>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Directory Configuration</h5>
+    <br>
+    <p>Laravel should always be served out of the root of the "web directory" configured for your web server. You should not attempt to serve a Laravel application out of a subdirectory of the "web directory". Attempting to do so could expose sensitive files present within your application.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>installation using Herd</h5>
+    <br>
+    <p>Laravel Herd is a blazing fast, native Laravel and PHP development environment for macOS and Windows. Herd includes everything you need to get started with Laravel development, including PHP and Nginx.</p>
+    <br>
+    <p>Once you install Herd, you're ready to start developing with Laravel. Herd includes command line tools for php, composer, laravel, expose, node, npm, and nvm.</p>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Herd on macOS</h5>
+    <br>
+    <p>If you develop on macOS, you can download the Herd installer from the Herd website. The installer automatically downloads the latest version of PHP and configures your Mac to always run Nginx in the background.</p>
+    <br>
+    <p>Herd for macOS uses dnsmasq to support "parked" directories. Any Laravel application in a parked directory will automatically be served by Herd. By default, Herd creates a parked directory at ~/Herd and you can access any Laravel application in this directory on the .test domain using its directory name.</p>
+    <br>
+    <p>After installing Herd, the fastest way to create a new Laravel application is using the Laravel CLI, which is bundled with Herd:</p>
+    <br>
+    <p>Of course, you can always manage your parked directories and other PHP settings via Herd's UI, which can be opened from the Herd menu in your system tray.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Herd on Windows</h5>
+    <br>
+    <p>You can download the Windows installer for Herd on the Herd website. After the installation finishes, you can start Herd to complete the onboarding process and access the Herd UI for the first time.</p>
+    <br>
+    <p>The Herd UI is accessible by left-clicking on Herd's system tray icon. A right-click opens the quick menu with access to all tools that you need on a daily basis.</p>
+    <br>
+    <p>During installation, Herd creates a "parked" directory in your home directory at %USERPROFILE%\Herd. Any Laravel application in a parked directory will automatically be served by Herd, and you can access any Laravel application in this directory on the .test domain using its directory name.</p>
+    <br>
+    <p>After installing Herd, the fastest way to create a new Laravel application is using the Laravel CLI, which is bundled with Herd. To get started, open Powershell and run the following commands:</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>IDE Support</h5>
+    <br>
+    <p>You are free to use any code editor you wish when developing Laravel applications; however, PhpStorm offers extensive support for Laravel and its ecosystem, including Laravel Pint.</p>
+    <br>
+    <p>In addition, the community maintained Laravel Idea PhpStorm plugin offers a variety of helpful IDE augmentations, including code generation, Eloquent syntax completion, validation rule completion, and more.</p>
+    <br>
+    <p>If you develop in Visual Studio Code (VS Code), the official Laravel VS Code Extension is now available. This extension brings Laravel-specific tools directly into your VS Code environment, enhancing productivity.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Next step</h5>
+    <br>
+    <p>Now that you have created your Laravel application, you may be wondering what to learn next. First, we strongly recommend becoming familiar with how Laravel works by reading the following documentation:</p>
+    <br>
+    <li class="text-danger">Request Lifecycle</li>
+    <li class="text-danger">Configuration</li>
+    <li class="text-danger">Directory Structure</li>
+    <li class="text-danger">Frontend</li>
+    <li class="text-danger">Service Container</li>
+    <li class="text-danger">Facades</li>
+    <br>
+    <p>How you want to use Laravel will also dictate the next steps on your journey. There are a variety of ways to use Laravel, and we'll explore two primary use cases for the framework below.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Laravel the Full Stack Framework</h5>
+    <br>
+    <p>Laravel may serve as a full stack framework. By "full stack" framework we mean that you are going to use Laravel to route requests to your application and render your frontend via Blade templates or a single-page application hybrid technology like Inertia. This is the most common way to use the Laravel framework, and, in our opinion, the most productive way to use Laravel.</p>
+    <br>
+    <p>If this is how you plan to use Laravel, you may want to check out our documentation on frontend development, routing, views, or the Eloquent ORM. In addition, you might be interested in learning about community packages like Livewire and Inertia. These packages allow you to use Laravel as a full-stack framework while enjoying many of the UI benefits provided by single-page JavaScript applications.</p>
+    <br>
+    <p>If you are using Laravel as a full stack framework, we also strongly encourage you to learn how to compile your application's CSS and JavaScript using Vite.</p>
+  </div>
+
+  <footer class="bg-light text-center text-lg-start mt-5" style="margin-left: 250px; padding: 20px;">
+    <div class="container">
+      <div class="row">
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Resources</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Documentation</a>
+          <a href="" class="d-block text-decoration-none text-dark">Starter Kits</a>
+          <a href="" class="d-block text-decoration-none text-dark">Release Notes</a>
+        </div>
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Product</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Cloud</a>
+          <a href="" class="d-block text-decoration-none text-dark">Forge</a>
+          <a href="" class="d-block text-decoration-none text-dark">Vapor</a>
+        </div>
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Packages</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Cashier</a>
+          <a href="" class="d-block text-decoration-none text-dark">Dusk</a>
+        </div>
+        
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

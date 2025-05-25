@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuration</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    body {
+      overflow-x: hidden  ;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      width: 100%;
+      background-color: rgb(255, 255, 255);
+      color: red;
+      text-align: left;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .sidebar {
+      height: 100vh;
+      width: 250px;
+      position: fixed;
+      top: 50px;
+      left: 0;
+      background-color: #ffffff;
+      padding-top: 20px;
+      overflow-y: auto;
+    }
+
+    .sidebar a {
+      color: #000000;
+      padding: 15px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      background-color: #c41f1f;
+      color: #fff;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 80px 20px 20px; 
+    }
+
+    .submenu a {
+      padding-left: 30px;
+      background-color: #f8f9fa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+   Laravel
+  </div>
+
+  <div class="sidebar">
+    <a data-bs-toggle="collapse" href="#submenuPrologue" role="button" aria-expanded="false" aria-controls="submenuPrologue">
+      Prologue
+    </a>
+    <div class="collapse submenu" id="submenuPrologue">
+      <a href="Release Notes.html">Release Notes</a>
+      <a href="Upgrade Guide.html">Upgrade Guide</a>
+      <a href="Contribution Guide.html">Contribution Guide</a>
+    </div>
+
+    <a data-bs-toggle="collapse" href="#submenuGettingStarted" role="button" aria-expanded="false" aria-controls="submenuGettingStarted">
+      Getting Started
+    </a>
+    <div class="collapse submenu" id="submenuGettingStarted">
+      <a href="Installation.html">Installation</a>
+      <a href="#">Configuration</a>
+      <a href="Directory Structure.html">Directory Structure</a>
+      <a href="Frontend.html">Frontend</a>
+      <a href="Starter Kits.html">Starter Kits</a>
+      <a href="Deployment.html">Deployment</a>
+    </div>
+
+    <a data-bs-toggle="collapse" href="#submenuArchitecture" role="button" aria-expanded="false" aria-controls="submenuArchitecture">
+      Architecture Concepts
+    </a>
+    <div class="collapse submenu" id="submenuArchitecture">
+      <a href="Request Lifecycle.html">Request Life cycle</a>
+      <a href="#">Service Container</a>
+      <a href="#">Service Providers</a>
+      <a href="#">Facades</a>
+    </div>
+
+    
+    <a href="">The basic</a>
+    <a href="">Digging Developer</a>
+    <a href="">Security</a>
+    <a href="">Data Base</a>
+    <a href="">Eloquent ORM</a>
+    <a href="">Testing</a>
+    <a href="">Packages</a>
+    <a href="">API Documentation</a>
+  </div>
+
+  <div class="main-content">
+    <h1>Configuration</h1>
+    <br>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Introduction</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Environtment Configuration</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Retrieving Environtment Configuration</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Determining the Current Environtmen</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Encrypting Environtment file</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Accessing Configuration Values</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Configuration Caching</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Configuration Publishing</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Debug Mode</p>
+    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Maintenace Mode</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Introduction</h5>
+    <br>
+    <p>All of the configuration files for the Laravel framework are stored in the config directory. Each option is documented, so feel free to look through the files and get familiar with the options available to you.</p>
+    <br>
+    <p>These configuration files allow you to configure things like your database connection information, your mail server information, as well as various other core configuration values such as your application URL and encryption key.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The about command</h5>
+    <br>
+    <p>Laravel can display an overview of your application's configuration, drivers, and environment via the about Artisan command.</p>
+    <br>
+    <p>If you're only interested in a particular section of the application overview output, you may filter for that section using the --only option: php artisan about --only=environment</p>
+    <br>
+    <p>Or, to explore a specific configuration file's values in detail, you may use the config:show Artisan command: php artisan config:show database</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Environment Configuration</h5>
+    <br>
+    <p>It is often helpful to have different configuration values based on the environment where the application is running. For example, you may wish to use a different cache driver locally than you do on your production server.</p>
+    <br>
+    <p>To make this a cinch, Laravel utilizes the DotEnv PHP library. In a fresh Laravel installation, the root directory of your application will contain a .env.example file that defines many common environment variables. During the Laravel installation process, this file will automatically be copied to .env.</p>
+    <br>
+    <p>Laravel's default .env file contains some common configuration values that may differ based on whether your application is running locally or on a production web server. These values are then read by the configuration files within the config directory using Laravel's env function.</p>
+    <br>
+    <p>If you are developing with a team, you may wish to continue including and updating the .env.example file with your application. By putting placeholder values in the example configuration file, other developers on your team can clearly see which environment variables are needed to run your application.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Environment File Security</h5>
+    <br>
+    <p>Your .env file should not be committed to your application's source control, since each developer / server using your application could require a different environment configuration. Furthermore, this would be a security risk in the event an intruder gains access to your source control repository, since any sensitive credentials would get exposed.</p>
+    <br>
+    <p>However, it is possible to encrypt your environment file using Laravel's built-in environment encryption. Encrypted environment files may be placed in source control safely.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Additional Environment Files</h5>
+    <br>
+    <p>Before loading your application's environment variables, Laravel determines if an APP_ENV environment variable has been externally provided or if the --env CLI argument has been specified. If so, Laravel will attempt to load an .env.[APP_ENV] file if it exists. If it does not exist, the default .env file will be loaded.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Environment Variable Types</h5>
+    <br>
+    <p>All variables in your .env files are typically parsed as strings, so some reserved values have been created to allow you to return a wider range of types from the env() function:</p>
+    <br>
+    <img src="foto environment 1.jpeg" alt="" width="650px">
+    <br>
+    <p>If you need to define an environment variable with a value that contains spaces, you may do so by enclosing the value in double quotes:</p>
+    <br>
+    <img src="foto environment 2.jpeg" alt="" width="500px">
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Retrieving Environment Configuration</h5>
+    <br>
+    <p>All of the variables listed in the .env file will be loaded into the $_ENV PHP super-global when your application receives a request. However, you may use the env function to retrieve values from these variables in your configuration files. In fact, if you review the Laravel configuration files, you will notice many of the options are already using this function:</p>
+    <br>
+    <img src="foto retrieving.jpeg" alt="" width="500px">
+    <br>
+    <p>The second value passed to the env function is the "default value". This value will be returned if no environment variable exists for the given key.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Determining the Current Environment</h5>
+    <br>
+    <p>The current application environment is determined via the APP_ENV variable from your .env file. You may access this value via the environment method on the App facade:</p>
+    <br>
+    <img src="foto determining 1.jpeg" alt="" width="500px">
+    <br>
+    <p>You may also pass arguments to the environment method to determine if the environment matches a given value. The method will return true if the environment matches any of the given values:</p>
+    <br>
+    <img src="foto determining 2.jpeg" alt="" width="500px">
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Encrypting Environment Files</h5>
+    <br>
+    <p>Unencrypted environment files should never be stored in source control. However, Laravel allows you to encrypt your environment files so that they may safely be added to source control with the rest of your application.</p>
+    <br>
+    <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Encryption</h5>
+    <br>
+    <p>To encrypt an environment file, you may use the env:encrypt command: php artisan env:encrypt</p>
+    <br>
+    <p>Running the env:encrypt command will encrypt your .env file and place the encrypted contents in an .env.encrypted file. The decryption key is presented in the output of the command and should be stored in a secure password manager. If you would like to provide your own encryption key you may use the --key option when invoking the command : php artisan env:encrypt --key=3UVsEgGVK36XN82KKeyLFMhvosbZN1aF</p>
+    <br>
+    <p class="fw-bold">The length of the key provided should match the key length required by the encryption cipher being used. By default, Laravel will use the AES-256-CBC cipher which requires a 32 character key. You are free to use any cipher supported by Laravel's encrypter by passing the --cipher option when invoking the command.</p>
+    <br>
+    <p>If your application has multiple environment files, such as .env and .env.staging, you may specify the environment file that should be encrypted by providing the environment name via the --env option: php artisan env:encrypt --env=staging</p>
+    <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Decryption</h5>
+     <br>
+     <p>To decrypt an environment file, you may use the env:decrypt command. This command requires a decryption key, which Laravel will retrieve from the LARAVEL_ENV_ENCRYPTION_KEY environment variable: php artisan env:decrypt</p>
+     <br>
+     <p>Or, the key may be provided directly to the command via the --key option: php artisan env:decrypt --key=3UVsEgGVK36XN82KKeyLFMhvosbZN1aF</p>
+     <br>
+     <p>When the env:decrypt command is invoked, Laravel will decrypt the contents of the .env.encrypted file and place the decrypted contents in the .env file.</p>
+     <br>
+     <p>The --cipher option may be provided to the env:decrypt command in order to use a custom encryption cipher: php artisan env:decrypt --key=qUWuNRdfuImXcKxZ --cipher=AES-128-CBC </p>
+     <br>
+     <p>If your application has multiple environment files, such as .env and .env.staging, you may specify the environment file that should be decrypted by providing the environment name via the --env option: php artisan env:decrypt --env=staging</p>
+     <br>
+     <p>In order to overwrite an existing environment file, you may provide the --force option to the env:decrypt command: php artisan env:decrypt --force</p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Accessing Configuration Values</h5>
+     <br>
+     <p>You may easily access your configuration values using the Config facade or global config function from anywhere in your application. The configuration values may be accessed using "dot" syntax, which includes the name of the file and option you wish to access. A default value may also be specified and will be returned if the configuration option does not exist:</p>
+     <br>
+     <img src="Foto Accessing 1.jpeg" alt="" width="500px">
+     <br>
+     <p>To set configuration values at runtime, you may invoke the Config facade's set method or pass an array to the config function:</p>
+     <br>
+     <img src="foto Accessing 2.jpeg" alt="" width="500px">
+     <br>
+     <p>To assist with static analysis, the Config facade also provides typed configuration retrieval methods. If the retrieved configuration value does not match the expected type, an exception will be thrown:</p>
+     <br>
+     <img src="foto accessing 3.jpeg" alt="" width="500px">
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Configuration Caching</h5>
+     <br>
+     <p>To give your application a speed boost, you should cache all of your configuration files into a single file using the config:cache Artisan command. This will combine all of the configuration options for your application into a single file which can be quickly loaded by the framework.</p>
+     <br>
+     <p>You should typically run the php artisan config:cache command as part of your production deployment process. The command should not be run during local development as configuration options will frequently need to be changed during the course of your application's development.</p>
+     <br>
+     <p>Once the configuration has been cached, your application's .env file will not be loaded by the framework during requests or Artisan commands; therefore, the env function will only return external, system level environment variables.</p>
+     <br>
+     <p>For this reason, you should ensure you are only calling the env function from within your application's configuration (config) files. You can see many examples of this by examining Laravel's default configuration files. Configuration values may be accessed from anywhere in your application using the config function described above.</p>
+     <br>
+     <p>The config:clear command may be used to purge the cached configuration: php artisan config:clear</p>
+     <br>
+     <p class="fw-bold">If you execute the config:cache command during your deployment process, you should be sure that you are only calling the env function from within your configuration files. Once the configuration has been cached, the .env file will not be loaded; therefore, the env function will only return external, system level environment variables.</p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Configuration Publishing</h5>
+     <br>
+     <p>Most of Laravel's configuration files are already published in your application's config directory; however, certain configuration files like cors.php and view.php are not published by default, as most applications will never need to modify them.</p>
+     <br>
+     <p>However, you may use the config:publish Artisan command to publish any configuration files that are not published by default:</p>
+     <br>
+     <img src="foto configuration publishing.jpeg" alt="" width="500px">
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Debug Mode</h5>
+     <br>
+     <p>The debug option in your config/app.php configuration file determines how much information about an error is actually displayed to the user. By default, this option is set to respect the value of the APP_DEBUG environment variable, which is stored in your .env file.</p>
+     <br>
+     <p class="fw-bold">For local development, you should set the APP_DEBUG environment variable to true. In your production environment, this value should always be false. If the variable is set to true in production, you risk exposing sensitive configuration values to your application's end users.</p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Maintenance Mode</h5>
+     <br>
+     <p>When your application is in maintenance mode, a custom view will be displayed for all requests into your application. This makes it easy to "disable" your application while it is updating or when you are performing maintenance. A maintenance mode check is included in the default middleware stack for your application. If the application is in maintenance mode, a Symfony\Component\HttpKernel\Exception\HttpException instance will be thrown with a status code of 503.</p>
+     <br>
+     <p>To enable maintenance mode, execute the down Artisan command: php artisan down</p>
+     <br>
+     <p>If you would like the Refresh HTTP header to be sent with all maintenance mode responses, you may provide the refresh option when invoking the down command. The Refresh header will instruct the browser to automatically refresh the page after the specified number of seconds: php artisan down --refresh=15</p>
+     <br>
+     <p>You may also provide a retry option to the down command, which will be set as the Retry-After HTTP header's value, although browsers generally ignore this header: php artisan down --retry=60</p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Bypassing Maintenance Mode</h5>
+     <br>
+     <p>To allow maintenance mode to be bypassed using a secret token, you may use the secret option to specify a maintenance mode bypass token: php artisan down --secret="1630542a-246b-4b66-afa1-dd72a4c43515"</p>
+     <br>
+     <p>After placing the application in maintenance mode, you may navigate to the application URL matching this token and Laravel will issue a maintenance mode bypass cookie to your browser: https://example.com/1630542a-246b-4b66-afa1-dd72a4c43515</p>
+     <br>
+     <p>If you would like Laravel to generate the secret token for you, you may use the with-secret option. The secret will be displayed to you once the application is in maintenance mode: php artisan down --with-secret</p>
+     <br>
+     <p>When accessing this hidden route, you will then be redirected to the / route of the application. Once the cookie has been issued to your browser, you will be able to browse the application normally as if it was not in maintenance mode.</p>
+     <br>
+     <p class="fw-bold">Your maintenance mode secret should typically consist of alpha-numeric characters and, optionally, dashes. You should avoid using characters that have special meaning in URLs such as ? or &.</p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Maintenance Mode on Multiple Servers</h5>
+     <br>
+     <p>By default, Laravel determines if your application is in maintenance mode using a file-based system. This means to activate maintenance mode, the php artisan down command has to be executed on each server hosting your application.</p>
+     <br>
+     <p>Alternatively, Laravel offers a cache-based method for handling maintenance mode. This method requires running the php artisan down command on just one server. To use this approach, modify the maintenance mode variables in your application's .env file. You should select a cache store that is accessible by all of your servers. This ensures the maintenance mode status is consistently maintained across every server:</p>
+     <br>
+     <img src="foto maintenance mode.jpeg" alt="" width="500px">
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Pre-Rendering the Maintenance Mode View</h5>
+     <br>
+     <p>If you utilize the php artisan down command during deployment, your users may still occasionally encounter errors if they access the application while your Composer dependencies or other infrastructure components are updating. This occurs because a significant part of the Laravel framework must boot in order to determine your application is in maintenance mode and render the maintenance mode view using the templating engine.</p>
+     <br>
+     <p>For this reason, Laravel allows you to pre-render a maintenance mode view that will be returned at the very beginning of the request cycle. This view is rendered before any of your application's dependencies have loaded. You may pre-render a template of your choice using the down command's render option: php artisan down --render="errors::503"</p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Redirecting Maintenance Mode Requests</h5>
+     <br>
+     <p>While in maintenance mode, Laravel will display the maintenance mode view for all application URLs the user attempts to access. If you wish, you may instruct Laravel to redirect all requests to a specific URL. This may be accomplished using the redirect option. For example, you may wish to redirect all requests to the / URI: php artisan down --redirect=/ </p>
+     <br>
+     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Disabling Maintenance Mode</h5>
+     <p>To disable maintenance mode, use the up command: php artisan up</p>
+     <br>
+     <p class="fw-bold">You may customize the default maintenance mode template by defining your own template at resources/views/errors/503.blade.php.</p>
+     <br>
+      <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Maintenance Mode and Queues</h5>
+      <br>
+      <p>While your application is in maintenance mode, no queued jobs will be handled. The jobs will continue to be handled as normal once the application is out of maintenance mode.</p>
+      <br>
+      <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Alternatives to Maintenance Mode</h5>
+      <br>
+      <p>Since maintenance mode requires your application to have several seconds of downtime, consider running your applications on a fully-managed platform like Laravel Cloud to accomplish zero-downtime deployment with Laravel.</p>
+
+
+  </div>
+
+  <footer class="bg-light text-center text-lg-start mt-5" style="margin-left: 250px; padding: 20px;">
+   <div class="container">
+      <div class="row">
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Resources</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Documentation</a>
+          <a href="" class="d-block text-decoration-none text-dark">Starter Kits</a>
+          <a href="" class="d-block text-decoration-none text-dark">Release Notes</a>
+        </div>
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Product</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Cloud</a>
+          <a href="" class="d-block text-decoration-none text-dark">Forge</a>
+          <a href="" class="d-block text-decoration-none text-dark">Vapor</a>
+        </div>
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Packages</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Cashier</a>
+          <a href="" class="d-block text-decoration-none text-dark">Dusk</a>
+        </div>
+        
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
