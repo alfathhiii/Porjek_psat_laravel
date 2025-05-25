@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    
+  />
+
+  <style>
+    body {
+      overflow-x: hidden  ;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      width: 100%;
+      background-color: rgb(255, 255, 255);
+      color: red;
+      text-align: left;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .sidebar {
+      height: 100vh;
+      width: 250px;
+      position: fixed;
+      top: 50px;
+      left: 0;
+      background-color: #ffffff;
+      padding-top: 20px;
+      overflow-y: auto;
+    }
+
+    .sidebar a {
+      color: #000000;
+      padding: 15px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      background-color: #c41f1f;
+      color: #fff;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 80px 20px 20px; 
+    }
+
+    .submenu a {
+      padding-left: 30px;
+      background-color: #f8f9fa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+   Laravel
+  </div>
+
+  <div class="sidebar">
+    <a data-bs-toggle="collapse" href="#submenuPrologue" role="button" aria-expanded="false" aria-controls="submenuPrologue">
+      Prologue
+    </a>
+    <div class="collapse submenu" id="submenuPrologue">
+      <a href="Release Notes.html">Release Notes</a>
+      <a href="Upgrade Guide.html">Upgrade Guide</a>
+      <a href="Contribution Guide.html">Contribution Guide</a>
+    </div>
+
+    <a data-bs-toggle="collapse" href="#submenuGettingStarted" role="button" aria-expanded="false" aria-controls="submenuGettingStarted">
+      Getting Started
+    </a>
+    <div class="collapse submenu" id="submenuGettingStarted">
+      <a href="Installation.html">Installation</a>
+      <a href="Configuration.html">Configuration</a>
+      <a href="Directory Structure.html">Directory Structure</a>
+      <a href="Frontend.html">Frontend</a>
+      <a href="Starter Kits.html">Starter Kits</a>
+      <a href="Deployment.html">Deployment</a>
+    </div>
+
+    <a data-bs-toggle="collapse" href="#submenuArchitecture" role="button" aria-expanded="false" aria-controls="submenuArchitecture">
+      Architecture Concepts
+    </a>
+    <div class="collapse submenu" id="submenuArchitecture">
+      <a href="#">Request Life cycle</a>
+      <a href="#">Service Container</a>
+      <a href="#">Service Providers</a>
+      <a href="#">Facades</a>
+    </div>
+
+    
+    <a href="">The basic</a>
+    <a href="">Digging Developer</a>
+    <a href="">Security</a>
+    <a data-bs-toggle="collapse" href="#submenuDatabase" role="button" aria-expanded="false" aria-controls="submenuDatabase">
+      Database</a>
+    <div class="collapse submenu" id="submenuDatabase">
+      <a href="Getting Started.html">Getting Started</a>
+      <a href="Query Builder.html">Query Builder</a>
+      <a href="Pagination.html">Pagination</a>
+      <a href="Migrations.html">Migrations</a>
+      <a href="Seeding.html">Seeding</a>
+      <a href="Redis.html">Redis</a>
+      <a href="MongoDB.html">MongoDB</a>
+    </div>  
+    <a href="">Eloquent ORM</a>
+    <a href="">Testing</a>
+    <a href="">Packages</a>
+    <a href="">API Documentation</a>
+  </div>
+
+  <div class="main-content">
+    <h1>Database: MongoDB</h1>
+    <br>
+    <h5>#Introduction</h5>
+    <br>
+    <p>MongoDB is one of the most popular NoSQL document-oriented database, used for its high write load (useful for analytics or IoT) and high availability (easy to set replica sets with automatic failover). It can also shard the database easily for horizontal scalability and has a powerful query language for doing aggregation, text search or geospatial queries.</p>
+    <p>Instead of storing data in tables of rows or columns like SQL databases, each record in a MongoDB database is a document described in BSON, a binary representation of the data. Applications can then retrieve this information in a JSON format. It supports a wide variety of data types, including documents, arrays, embedded documents, and binary data.</p>
+    <p>Before using MongoDB with Laravel, we recommend installing and using the mongodb/laravel-mongodb package via Composer. The laravel-mongodb package is officially maintained by MongoDB, and while MongoDB is natively supported by PHP through the MongoDB driver, the Laravel MongoDB package provides a richer integration with Eloquent and other Laravel features.</p>
+    <br>
+    <h5>#Installation</h5>
+    <br>
+    <p>To connect to a MongoDB database, the mongodb PHP extension is required. If you are developing locally using Laravel Herd or installed PHP via php.new, you already have this extension installed on your system. However, if you need to install the extension manually, you may do so via PECL.</p>
+    <br>
+</div>
+
+
+  <footer class="bg-light text-center text-lg-start mt-5" style="margin-left: 250px; padding: 20px;">
+    <div class="container">
+      <div class="row">
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Documentation</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Release Notes</a>
+          <a href="" class="d-block text-decoration-none text-dark">Installation</a>
+          <a href="" class="d-block text-decoration-none text-dark">Service Container</a>
+        </div>
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Resources</h6>
+          <a href="" class="d-block text-decoration-none text-dark">About</a>
+          <a href="" class="d-block text-decoration-none text-dark">Contact</a>
+          <a href="" class="d-block text-decoration-none text-dark">FAQ</a>
+        </div>
+  
+        <div class="col-md-4 mb-3">
+          <h6 class="text-uppercase fw-bold">Legal</h6>
+          <a href="" class="d-block text-decoration-none text-dark">Terms of Service</a>
+          <a href="" class="d-block text-decoration-none text-dark">Privacy Policy</a>
+        </div>
+        
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <a href="Getting Started.html"></a>
+  <a href="Query Builder.html"></a>
+  <a href="Pagination.html"></a>
+  <a href="Migrations.html"></a>
+  <a href="Seeding.html"></a>
+  <a href="Redis.html"></a>
+  <a href="MongoDB.html"></a>
+</body>
+</html>
