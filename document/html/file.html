@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fixed Sidebar & Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        background-color: rgb(34, 34, 34);
+      }
+      .navbar-fixed {
+        height: 80px;
+        z-index: 1040;
+      }
+      .sidebar-fixed {
+        top: 80px;
+        height: 100vh;
+        width: 300px;
+        z-index: 1030;
+        overflow-y: auto;
+      }
+      .main-content {
+        margin-left: 300px;
+        margin-top: 80px;
+        padding: 2rem;
+        color: white;
+      }
+      .nav-pills .nav-link {
+  position: relative;
+  padding-left: 1rem; /* agar tidak terlalu dekat garisnya */
+}
+
+.nav-pills .nav-link.active {
+  color: red !important;
+  background-color: transparent;
+  font-weight: bold;
+}
+
+.nav-pills .nav-link.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10%;
+  bottom: 10%;
+  width: 5px;
+  background-color: red;
+  border-radius: 5px;
+}
+
+    </style>
+  </head>
+  <body class="bg-dark">
+
+    <!-- Navbar -->
+    <div class="position-fixed top-0 start-0 w-100 bg-dark navbar-fixed d-flex justify-content-between align-items-center px-5">
+      <h4 class="text-danger fs-1 fw-bold mb-0 me-4">Laravel</h4>
+
+      <div class="d-flex align-items-center">
+        <div class="input-group" style="width: 700px;">
+          <span class="input-group-text bg-secondary border-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11 6a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
+              <path d="M14.293 13.293l-3.387-3.387a6 6 0 1 0-.707.707l3.387 3.387a.5.5 0 0 0 .707-.707z"/>
+            </svg>
+          </span>
+          <input type="search" class="form-control bg-secondary text-white border-0" placeholder="Search..." aria-label="Search">
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          Version 12x
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Version master</a></li>
+          <li><a class="dropdown-item" href="#">Version 12x</a></li>
+          <li><a class="dropdown-item" href="#">Version 11x</a></li>
+          <li><a class="dropdown-item" href="#">Version 10x</a></li>
+          <li><a class="dropdown-item" href="#">Version 9x</a></li>
+          <li><a class="dropdown-item" href="#">Version 8x</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="position-fixed start-0 bg-dark text-white p-4 sidebar-fixed mx-3">
+      <div class="mb-4">
+        <div class="text-uppercase fw-bold fs-5 mb-3 mt-5">Digging Deeper</div>
+           <ul class="nav nav-pills flex-column mb-2">
+          <li class="nav-item">
+            <a href="./index.html" class="nav-link  text-light fs-5 rounded-pill px-3">Artisan Console</a>
+          </li>
+          <li class="nav-item">
+            <a href="./Broad.html" class="nav-link  text-light fs-5 px-3">Broadcasting</a>
+          </li>
+          <li class="nav-item">
+            <a href="./Cache.html" class="nav-link   text-light fs-5 px-3">Cache</a>
+          </li>
+          <li class="nav-item">
+            <a href="./Colect.html" class="nav-link  text-light fs-5 px-3">Collections</a>
+          </li>
+          <li class="nav-item">
+            <a href="./Concur.html" class="nav-link  text-light fs-5 px-3">Concurency</a>
+          </li>
+          <li class="nav-item">
+            <a href="./Context.html" class="nav-link  text-light fs-5 px-3">Context</a>
+          </li>
+          <li class="nav-item">
+            <a href="./Events.html" class="nav-link  text-light fs-5 px-3">Events</a>
+          </li>
+          <li class="nav-item">
+            <a href="./file.html" class="nav-link active text-light fs-5 px-3">File Storage</a>
+          </li>
+          <li class="nav-item">
+            <a href="./help.html" class="nav-link text-light fs-5 px-3">Helpers</a>
+          </li>
+          <li class="nav-item">
+            <a href="./http.html" class="nav-link text-light fs-5 px-3">HTTP Client</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Konten utama -->
+    <div class="main-content">
+      <h1 class="mb-5 fw-light">File Storage</h1>
+
+      <p><span class="text-danger mb-5 mb-5">#</span>Introduction</p>
+      <p><span class="text-danger mt-5 mb-5">#</span>Configuration</p>
+      <p><span class="text-danger mt-5 mb-5 ">#</span>Obtaining Disk Instances</p>
+      <p><span class="text-danger mt-5 mb-5 ">#</span>Retrieving Files</p>
+
+     
+      <h1><span class="text-danger mt-5">#</span>Introduction</h1>
+      <p class="">The most basic Laravel routes accept a URI and a closure, providing a very simple and expressive method of defining routes and behavior without complicated routing configuration files:</p>
+
+        <p class="mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores tenetur totam magnam suscipit repellat mollitia, nisi, omnis aut sunt et velit voluptates ad distinctio reprehenderit, laborum temporibus? Distinctio beatae possimus omnis blanditiis accusantium qui enim similique provident mollitia, at animi est quas, asperiores nesciunt unde, quia nostrum quidem nulla.</p>
+
+        <p class="mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora laborum hic nobis, dolor ratione molestiae ullam quod libero soluta. Culpa earum doloribus non labore atque corrupti aspernatur necessitatibus cupiditate quis. Odit ex, architecto eius sint rerum nesciunt placeat nihil ut fugit accusamus, aliquam quisquam ab et ipsa animi deleniti? Aperiam, suscipit at in porro soluta itaque debitis odit autem molestiae nesciunt! Vel exercitationem laborum perspiciatis optio, voluptas quia harum vero.</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto itaque quam sequi impedit eaque tenetur necessitatibus at repudiandae animi voluptatem explicabo recusandae magni quis reiciendis aut laborum atque assumenda modi, error quaerat sed? Id ipsa dolorem rem fugiat perspiciatis omnis quis illo tempore quas expedita? Delectus tempora earum praesentium inventore!</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
