@@ -1,1 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <!-- navbar -->
+     <div class="container-fluid mt-5">
+  <nav class="d-flex justify-content-between align-items-center">
+    
 
+    <div class="d-flex align-items-center mx-3">
+      <a href="./index.html" class="text-danger text-decoration-none fs-2 fw-bold mb-0 me-4">Laravel</a>
+      <ul class="d-flex list-unstyled mb-0">
+        <li><a class="fs-4 text-decoration-none text-dark mx-3 fw-semibold" href="./produk.html">Products</a></li>
+        <li><a class="fs-4 text-decoration-none text-dark mx-3 fw-semibold" href="#">Open Source</a></li>
+        <li><a class="fs-4 text-decoration-none text-dark mx-3 fw-semibold" href="#">Developers</a></li>
+        <li><a class="fs-4 text-decoration-none text-dark mx-3 fw-semibold" href="#">Partners</a></li>
+      </ul>
+    </div>
+
+
+    <div class="d-flex align-items-center gap-2 mx-5">
+      <input type="search" class="form-control" placeholder="Search Docs">
+      <a class="btn btn-outline-secondary text-dark" href="#">Deploy</a>
+      <a class="btn btn-dark text-light" href="../../document/html/Release Notes.html">Documentation</a>
+    </div>
+
+  </nav>
+</div>
+
+<!-- hero -->
+ <div class="hero mx-5 ">
+    <div>
+        <h1><span class="text-danger">|</span>Build and ship software with <br>
+            <span class="text-danger">tools crafted for productivity </span></h1>
+            <p class="mt-5 fs-4">Laravel provides a complete ecosystem for web artisans. Our open source PHP framework, products, packages, and starter kits offer everything you need to build, deploy, and monitor web applications.</p>
+        </div>
+        </div>
+
+        <div class="ekositem mx-5 mb-5">
+            <p class="fs-4 mb-5"><span class="text-danger fs-1 fw-semibold">|</span>Ecosystem</p>
+            <h1 class="fs-1 mb-5">A PHP framework with a robust ecosystem</h1>
+            <p class="fs-4">Out of the box, Laravel has elegant solutions for the common features needed by all modern web applications. Our first-party packages offer opinionated solutions for specific problems so you don't need to reinvent the wheel.</p>
+        </div>
+
+
+        <!-- card -->
+    <div class="container mt-5">
+
+  <!-- Nav Tabs -->
+  <ul class="nav nav-tabs" id="laravelTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="packages-tab" data-bs-toggle="tab" data-bs-target="#packages" type="button" role="tab">Packages</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="starter-tab" data-bs-toggle="tab" data-bs-target="#starter" type="button" role="tab">Starter Kits</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="products-tab" data-bs-toggle="tab" data-bs-target="#products" type="button" role="tab">Products</button>
+    </li>
+  </ul>
+
+  <!-- Tab Content -->
+  <div class="tab-content mt-4" id="laravelTabContent">
+
+    <!-- Packages Tab -->
+   <div class="tab-pane fade show active" id="packages" role="tabpanel">
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <!-- Card 1 -->
+  <div class="col">
+    <a href="#" class="text-decoration-none text-dark">
+      <div class="card card-hover mx-2 my-3 p-3 shadow-sm h-100">
+        <div class="d-flex">
+          <i class="bi bi-search me-3 fs-1 text-danger"></i>
+          <div>
+            <h5 class="mb-1">Scout <span class="badge bg-light text-dark">Free</span></h5>
+            <p class="text-muted mb-0">Search for Eloquent models</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="col">
+    <a href="#" class="text-decoration-none text-dark">
+      <div class="card card-hover mx-2 my-3 p-3 shadow-sm h-100">
+        <div class="d-flex">
+          <i class="bi bi-flag-fill me-3 fs-1 text-success"></i>
+          <div>
+            <h5 class="mb-1">Pennant <span class="badge bg-light text-dark">Free</span></h5>
+            <p class="text-muted mb-0">Feature flag management</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="col">
+    <a href="#" class="text-decoration-none text-dark">
+      <div class="card card-hover mx-2 my-3 p-3 shadow-sm h-100">
+        <div class="d-flex">
+          <i class="bi bi-box-seam me-3 fs-1 text-warning"></i>
+          <div>
+            <h5 class="mb-1">Sail <span class="badge bg-light text-dark">Free</span></h5>
+            <p class="text-muted mb-0">Local Docker development</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="col">
+    <a href="#" class="text-decoration-none text-dark">
+      <div class="card card-hover mx-2 my-3 p-3 shadow-sm h-100">
+        <div class="d-flex">
+          <i class="bi bi-bug-fill me-3 fs-1 text-danger"></i>
+          <div>
+            <h5 class="mb-1">Telescope <span class="badge bg-light text-dark">Free</span></h5>
+            <p class="text-muted mb-0">Local debugging and insights</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="col">
+    <a href="#" class="text-decoration-none text-dark">
+      <div class="card card-hover mx-2 my-3 p-3 shadow-sm h-100">
+        <div class="d-flex">
+          <i class="bi bi-lightning-fill me-3 fs-1 text-warning"></i>
+          <div>
+            <h5 class="mb-1">Octane <span class="badge bg-light text-dark">Free</span></h5>
+            <p class="text-muted mb-0">High performance app server</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="col">
+    <a href="#" class="text-decoration-none text-dark">
+      <div class="card card-hover mx-2 my-3 p-3 shadow-sm h-100">
+        <div class="d-flex">
+          <i class="bi bi-cash-coin me-3 fs-1 text-success"></i>
+          <div>
+            <h5 class="mb-1">Cashier <span class="badge bg-light text-dark">Free</span></h5>
+            <p class="text-muted mb-0">Payments and subscriptions</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Card 7 -->
+  <div class="col">
+    <a href="#" class="text-decoration-none text-dark">
+      <div class="card card-hover mx-2 my-3 p-3 shadow-sm h-100">
+        <div class="d-flex">
+          <i class="bi bi-code-slash me-3 fs-1 text-secondary"></i>
+          <div>
+            <h5 class="mb-1">Pint <span class="badge bg-light text-dark">Free</span></h5>
+            <p class="text-muted mb-0">Code styler for minimalists</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Card 8 -->
+  <div class="col">
+    <a href="#" class="text-decoration-none text-dark">
+      <div class="card card-hover mx-2 my-3 p-3 shadow-sm h-100">
+        <div class="d-flex">
+          <i class="bi bi-graph-up-arrow me-3 fs-1 text-primary"></i>
+          <div>
+            <h5 class="mb-1">Pulse <span class="badge bg-light text-dark">Free</span></h5>
+            <p class="text-muted mb-0">Performance insights</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Card 9 -->
+  <div class="col">
+    <a href="#" class="text-decoration-none text-dark">
+      <div class="card card-hover mx-2 my-3 p-3 shadow-sm h-100">
+        <div class="d-flex">
+          <i class="bi bi-broadcast-pin me-3 fs-1 text-info"></i>
+          <div>
+            <h5 class="mb-1">Reverb <span class="badge bg-light text-dark">Free</span></h5>
+            <p class="text-muted mb-0">Fast, scalable WebSockets</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+
+    </div>
+
+    <!-- Starter Kits Tab -->
+    <div class="tab-pane fade" id="starter" role="tabpanel">
+      <div class="container my-5">
+  <div class="row row-cols-1 row-cols-md-4 g-4 text-start">
+    <!-- Cloud -->
+    <div class="col">
+      <div class="card h-100 text-center p-4">
+        <i class="bi bi-cloud"></i>
+        <h5 class="fw-bold mt-3">React Starter Kit<span class="badge bg-secondary text-dark ms-2">free</span></h5>
+        <p class="text-muted">Everything you need to create an application with Laravel, Inertia, and React.</p>
+        
+        <a href="#" class="btn btn-outline-secondary text-dark w-100">Get started</a>
+        <a class="text-danger pt-3" href="">Live Priview ></a>
+      </div>
+    </div>
+
+    <!-- Forge -->
+    <div class="col">
+      <div class="card h-100 text-center p-4">
+        <i class="bi bi-gear"></i>
+        <h5 class="fw-bold mt-3">Vue Starter Kit<span class="badge bg-secondary text-dark ms-2">Free</span></h5>
+        <p class="text-muted">Everything you need to create an application with Laravel, Inertia, and Vue.</p>
+        <
+        <a href="#" class="btn btn-outline-secondary text-dark w-100">Get started</a>
+        <a class="text-danger pt-3" href="">Live Priview ></a>
+      </div>
+    </div>
+
+    <!-- Nightwatch -->
+    <div class="col">
+      <div class="card h-100 text-center p-4">
+        <i class="bi bi-eye"></i>
+        <h5 class="fw-bold mt-3">Livewire Starter Kit <span class="badge bg-secondary text-dark ms-2">free</span></h5>
+        <p class="text-muted">Everything you need to create an application with Laravel and Livewire.</p>
+        <a href="#" class="btn btn-outline-secondary text-dark w-100">Get started</a>
+        <a class="text-danger pt-3" href="">Live Priview ></a>
+      </div>
+    </div>
+    </div>
+      </div>
+    </div>
+
+    <!-- Products Tab -->
+    <div class="tab-pane fade" id="products" role="tabpanel">
+     
+<div class="container my-5">
+  <div class="row row-cols-1 row-cols-md-4 g-4 text-start">
+    <!-- Cloud -->
+    <div class="col">
+      <div class="card h-100 text-center p-4">
+        <i class="bi bi-cloud"></i>
+        <h5 class="fw-bold mt-3">Cloud <span class="badge bg-danger ms-2">New</span></h5>
+        <p class="text-muted">Fully managed infrastructure platform for deploying and hosting PHP applications.</p>
+        <p class="fw-medium mb-3">Plans from $0.00/month</p>
+        <a href="#" class="btn btn-outline-dark w-100">Deploy now</a>
+      </div>
+    </div>
+
+    <!-- Forge -->
+    <div class="col">
+      <div class="card h-100 text-center p-4">
+        <i class="bi bi-gear"></i>
+        <h5 class="fw-bold mt-3">Forge</h5>
+        <p class="text-muted">Server management for apps on DigitalOcean, Vultr, Amazon, Hetzner, and more.</p>
+        <p class="fw-medium mb-3">Plans from $12.00/month</p>
+        <a href="#" class="btn btn-outline-dark w-100">Get started</a>
+      </div>
+    </div>
+
+    <!-- Nightwatch -->
+    <div class="col">
+      <div class="card h-100 text-center p-4">
+        <i class="bi bi-eye"></i>
+        <h5 class="fw-bold mt-3">Nightwatch <span class="badge bg-secondary text-dark ms-2">Soon</span></h5>
+        <p class="text-muted">Unparalleled monitoring and insights into your Laravel application's performance.</p>
+        <p class="fw-medium mb-3">Pricing coming soon</p>
+        <a href="#" class="btn btn-outline-dark w-100">Join waitlist</a>
+      </div>
+    </div>
+
+    <!-- Nova -->
+    <div class="col">
+      <div class="card h-100 text-center p-4">
+        <i class="bi bi-speedometer2"></i>
+        <h5 class="fw-bold mt-3">Nova</h5>
+        <p class="text-muted">The simplest and fastest way to build production-ready admin panels using Laravel.</p>
+        <p class="fw-medium mb-3">License from $99.00</p>
+        <a href="#" class="btn btn-outline-dark w-100">Buy license</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>
