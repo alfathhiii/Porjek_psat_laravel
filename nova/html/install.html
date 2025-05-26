@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Laravel Nova Docs Style</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0f1b2a;
+      color: white;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #121e2d;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .sidebar h3 {
+      color: #00e3c2;
+      margin-top: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #ccc;
+      text-decoration: none;
+      margin: 8px 0;
+      padding-left: 10px;
+    }
+
+    .sidebar a:hover {
+      color: white;
+    }
+
+    .content {
+      margin-left: 270px;
+      margin-right: 270px;
+      padding: 30px;
+      flex-grow: 1;
+    }
+
+    .content h1 {
+      color: white;
+    }
+
+    .card {
+      background-color: #182b40;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    .toc {
+      width: 250px;
+      position: fixed;
+      right: 0;
+      top: 0;
+      height: 100vh;
+      background-color: #121e2d;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .toc h4 {
+      margin-top: 0;
+      color: #00e3c2;
+    }
+
+    .toc a {
+      display: block;
+      color: #ccc;
+      text-decoration: none;
+      margin: 6px 0;
+      font-size: 14px;
+    }
+
+    .toc a:hover {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+<div class="sidebar">
+    <h3>Get Started</h3>
+    <a href="./install.html">Installation</a>
+    <a href="./reales.html">Release Notes</a>
+    <a href="./upgrade.html">Upgrade Guide</a>
+    <h3>Resources</h3>
+    <a href="./basic.html">The Basics</a>
+    <a href="./field.html">Fields</a>
+    <a href="./date.html">File Fields</a>
+  </div>
+
+  <div class="content">
+    <h1>Installation</h1>
+    <p>Learn how to install Laravel Nova into your Laravel application.</p>
+
+    <div class="card">
+      <h3>Purchase Nova</h3>
+      <p>Purchase a license for Laravel Nova</p>
+    </div>
+
+    <div class="card">
+      <h3>Learn More</h3>
+      <p>Watch the free Nova series on Laracasts</p>
+    </div>
+
+    <h2>Requirements</h2>
+    <ul>
+      <li>Composer 2</li>
+      <li>Laravel Framework 10.x, 11.x, or 12.x</li>
+    </ul>
+  </div>
+
+  <div class="toc">
+    <h4>On this page</h4>
+    <a href="#">Requirements</a>
+    <a href="#">Browser Support</a>
+    <a href="#">Installing Nova via Composer</a>
+    <a href="#">Registering License</a>
+    <a href="#">CI Environments</a>
+    <a href="#">Development Domains</a>
+    <a href="#">Access Authorization</a>
+    <a href="#">Customization</a>
+    <a href="#">Branding</a>
+  </div>
+</body>
+</html>

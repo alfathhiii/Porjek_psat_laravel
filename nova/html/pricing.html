@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laravel Nova Style</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(to right, #042f42, #063047);
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+         margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #0f1b2a;
+      color: white;
+    }
+    .text-gradient {
+      background: linear-gradient(to right, #00f4bf, #00cfff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-title {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    .hero-subtitle {
+      color: #b0c4d4;
+      font-size: 1.2rem;
+    }
+    .btn-glow {
+      background: #00dfc4;
+      color: black;
+      font-weight: 600;
+    }
+    .nav-link, .navbar-brand {
+      color: white !important;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 50px auto;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: #142334;
+      border-radius: 10px;
+      padding: 30px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h2 {
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .note {
+      color: #ccc;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+      color: white;
+    }
+
+    .features li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .features li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #00ffcc;
+    }
+
+    .btn {
+      background-color: #00d6b4;
+      color: #003e3e;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #00c3a4;
+    }
+  </style>
+</head>
+<body>
+
+   <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark py-3 px-4">
+  <div class="container-fluid">
+    <!-- Left: Brand -->
+    <a class="navbar-brand" href="dashboard.html">Laravel Nova</a>
+
+    <!-- Center: Main nav links -->
+    <div class="d-flex mx-auto order-0">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#">Releases</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Docs</a></li>
+        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+      </ul>
+    </div>
+
+    <!-- Right: Login/Register -->
+    <div class="d-flex order-lg-1">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        <li class="nav-item ms-2"><a class="btn btn-glow" href="register.html">Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+    <div class="card">
+      <div>
+        <h2>Single License</h2>
+        <div class="price">$99</div>
+        <div class="note">one-time payment<br/>renews at $79 per year</div>
+        <ul class="features">
+          <li>Single Project</li>
+          <li>Budget Conscious</li>
+          <li>All Nova Features</li>
+        </ul>
+      </div>
+      <button class="btn">Get Started</button>
+    </div>
+
+    <div class="card">
+      <div>
+        <h2 style="color: #00ffcc;">Unlimited</h2>
+        <div class="price">$299</div>
+        <div class="note">one-time payment<br/>renews at $249 per year</div>
+        <ul class="features">
+          <li>Unlimited Projects</li>
+          <li>Email Support</li>
+          <li>All Nova Features</li>
+        </ul>
+      </div>
+      <button class="btn">Get Started</button>
+    </div>
+  </div>
+
+</body>
+</html>
