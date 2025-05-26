@@ -165,17 +165,17 @@
     <br>
     <p>All variables in your .env files are typically parsed as strings, so some reserved values have been created to allow you to return a wider range of types from the env() function:</p>
     <br>
-    <img src="foto environment 1.jpeg" alt="" width="650px">
+    <img src="../photo/foto environment 1.jpeg" alt="" width="650px">
     <br>
     <p>If you need to define an environment variable with a value that contains spaces, you may do so by enclosing the value in double quotes:</p>
     <br>
-    <img src="foto environment 2.jpeg" alt="" width="500px">
+    <img src="../photo/foto environment 2.jpeg" alt="" width="500px">
     <br>
     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Retrieving Environment Configuration</h5>
     <br>
     <p>All of the variables listed in the .env file will be loaded into the $_ENV PHP super-global when your application receives a request. However, you may use the env function to retrieve values from these variables in your configuration files. In fact, if you review the Laravel configuration files, you will notice many of the options are already using this function:</p>
     <br>
-    <img src="foto retrieving.jpeg" alt="" width="500px">
+    <img src="../photo/foto retrieving.jpeg" alt="" width="500px">
     <br>
     <p>The second value passed to the env function is the "default value". This value will be returned if no environment variable exists for the given key.</p>
     <br>
@@ -183,11 +183,11 @@
     <br>
     <p>The current application environment is determined via the APP_ENV variable from your .env file. You may access this value via the environment method on the App facade:</p>
     <br>
-    <img src="foto determining 1.jpeg" alt="" width="500px">
+    <img src="../photo/foto determining 1.jpeg" alt="" width="500px">
     <br>
     <p>You may also pass arguments to the environment method to determine if the environment matches a given value. The method will return true if the environment matches any of the given values:</p>
     <br>
-    <img src="foto determining 2.jpeg" alt="" width="500px">
+    <img src="../photo/foto determining 2.jpeg" alt="" width="500px">
     <br>
     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Encrypting Environment Files</h5>
     <br>
@@ -221,15 +221,15 @@
      <br>
      <p>You may easily access your configuration values using the Config facade or global config function from anywhere in your application. The configuration values may be accessed using "dot" syntax, which includes the name of the file and option you wish to access. A default value may also be specified and will be returned if the configuration option does not exist:</p>
      <br>
-     <img src="Foto Accessing 1.jpeg" alt="" width="500px">
+     <img src="../photo/Foto Accessing 1.jpeg" alt="" width="500px">
      <br>
      <p>To set configuration values at runtime, you may invoke the Config facade's set method or pass an array to the config function:</p>
      <br>
-     <img src="foto Accessing 2.jpeg" alt="" width="500px">
+     <img src="../photo/foto Accessing 2.jpeg" alt="" width="500px">
      <br>
      <p>To assist with static analysis, the Config facade also provides typed configuration retrieval methods. If the retrieved configuration value does not match the expected type, an exception will be thrown:</p>
      <br>
-     <img src="foto accessing 3.jpeg" alt="" width="500px">
+     <img src="../photo/foto accessing 3.jpeg" alt="" width="500px">
      <br>
      <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Configuration Caching</h5>
      <br>
@@ -251,7 +251,7 @@
      <br>
      <p>However, you may use the config:publish Artisan command to publish any configuration files that are not published by default:</p>
      <br>
-     <img src="foto configuration publishing.jpeg" alt="" width="500px">
+     <img src="../photo/foto configuration publishing.jpeg" alt="" width="500px">
      <br>
      <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Debug Mode</h5>
      <br>
@@ -287,7 +287,7 @@
      <br>
      <p>Alternatively, Laravel offers a cache-based method for handling maintenance mode. This method requires running the php artisan down command on just one server. To use this approach, modify the maintenance mode variables in your application's .env file. You should select a cache store that is accessible by all of your servers. This ensures the maintenance mode status is consistently maintained across every server:</p>
      <br>
-     <img src="foto maintenance mode.jpeg" alt="" width="500px">
+     <img src="../photo/foto maintenance mode.jpeg" alt="" width="500px">
      <br>
      <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Pre-Rendering the Maintenance Mode View</h5>
      <br>

@@ -126,7 +126,7 @@
     <br>
    <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Upgrading to 12.0 Form 11x</p>
     <p>Estimated Upgrade Time: 5 Minutes</p>
-    <img src="foto upgrade guide.jpeg" alt="" width="300px">
+    <img src="../photo/foto upgrade guide.jpeg" alt="" width="300px">
     <br>
     <h1 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Updating Dependencies</h1>
     <br>
@@ -144,13 +144,13 @@
     <br>
      <h1 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Updating Laravel Installer</h1>
      <p>If you are using the Laravel installer CLI tool to create new Laravel applications, you should update your installer installation to be compatible with Laravel 12.x and the new Laravel starter kits. If you installed the Laravel installer via composer global require, you may update the installer using composer global update:</p>
-     <img src="Foto composer.jpeg" alt="" width="500px">
+     <img src="../photo/Foto composer.jpeg" alt="" width="500px">
      <p>If you originally installed PHP and Laravel via php.new, you may simply re-run the php.new installation commands for your operating system to install the latest version of PHP and the Laravel installer:</p>
-     <img src="Foto macOS.jpeg" alt="" width="500px">
+     <img src="../photo/Foto macOS.jpeg" alt="" width="500px">
      <br>
-     <img src="Foto Windows PowerShell.jpeg" alt="" width="500px">
+     <img src="../photo/Foto Windows PowerShell.jpeg" alt="" width="500px">
      <br>
-     <img src="Foto Linux.jpeg" alt="" width="500px">
+     <img src="../photo/Foto Linux.jpeg" alt="" width="500px">
      <p>Or, if you are using Laravel Herd's bundled copy of the Laravel installer, you should update your Herd installation to the latest release.</p>
      <br>
      <p><h1 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Authentication</h1></p>
@@ -162,24 +162,24 @@
       <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Concurrency Result Index Mapping</p>
       <p class="fw-bold">Likelihood Of Impact: Low</p>
       <p>When invoking the Concurrency::run method with an associative array, the results of the concurrent operations are now returned with their associated keys:</p>
-      <img src="foto concurrency.jpeg" alt="" width="500px">
+      <img src="../photo/foto concurrency.jpeg" alt="" width="500px">
       <br>
       <h1 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Container</h1>
       <br>
       <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Container Class Dependency Resolution</p>
       <p class="fw-bold">Likelihood Of Impact: Low</p>
       <p>The dependency injection container now respects the default value of class properties when resolving a class instance. If you were previously relying on the container to resolve a class instance without the default value, you may need to adjust your application to account for this new behavior:</p>
-      <img src="Foto container.jpeg" alt="" width="500px">
+      <img src="../photo/Foto container.jpeg" alt="" width="500px">
       <br>
       <h1 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Database</h1>
       <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Multi-Schema Database Inspecting</p>
       <p class="fw-bold">Likelihood Of Impact: Low</p>
       <p>The Schema::getTables(), Schema::getViews(), and Schema::getTypes() methods now include the results from all schemas by default. You may pass the schema argument to retrieve the result for the given schema only:</p>
-      <img src="Foto database 1.jpeg" alt="" width="500px">
+      <img src="../photo/Foto database 1.jpeg" alt="" width="500px">
       <br>
       <p>The Schema::getTableListing() method now returns schema-qualified table names by default. You may pass the schemaQualified argument to change the behavior as desired:</p>
       <br>
-      <img src="Foto Database 2.jpeg" alt="" width="500px">
+      <img src="../photo/Foto Database 2.jpeg" alt="" width="500px">
       <p>The db:table and db:show commands now output the results of all schemas on MySQL, MariaDB, and SQLite, just like PostgreSQL and SQL Server.</p>
       <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Updated Blueprint Constructor Signature</p>
       <p class="fw-bold">Likelihood Of Impact: Very Low</p>
@@ -191,7 +191,7 @@
        <p class="fw-bold">Likelihood Of Impact: Medium</p>
        <p>The HasUuids trait now returns UUIDs that are compatible with version 7 of the UUID spec (ordered UUIDs). If you would like to continue using ordered UUIDv4 strings for your model's IDs, you should now use the HasVersion4Uuids trait:</p>
        <br>
-       <img src="foto Eloquent.jpeg" alt="" width="500px">
+       <img src="../photo/foto Eloquent.jpeg" alt="" width="500px">
        <p>The HasVersion7Uuids trait has been removed. If you were previously using this trait, you should use the HasUuids trait instead, which now provides the same behavior.</p>
   </div>
 
