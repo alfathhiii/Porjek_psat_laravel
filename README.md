@@ -1,7 +1,7 @@
 projek ini ditujukan untuk siswa kelas XI untuk Penilaian Sumatif Akhir Tahun(PSAT) jurusan Teknik Komouter dan Jaringan (TKJ) SMK Ketintang Surabaya 
 
 Anggota Kelompok:
-  1.Alfathir Firmansyah/04 (forge)
+  1.Alfathir Firmansyah/04 (forge) <br>
   2.Alvian damara T./05 (document)
   3.Firasul Abian Attaillah/11 ()
   4.Reyvan Hardiansyah/23 (nova)
