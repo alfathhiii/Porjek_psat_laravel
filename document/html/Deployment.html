@@ -104,7 +104,7 @@
 
     
     <a href="../../laravel/html/docs.html">The basic</a>
-    <a href="">Digging Developer</a>
+    <a href="Cache.html">Digging Developer</a>
     <a href="">Security</a>
     <a href="Getting Started.html">Data Base</a>
     <a href="">Eloquent ORM</a>
@@ -132,10 +132,14 @@
     <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The Health Route</p>
     <p class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Deploying With Laravel Cloud or Forge</p>
     <br>
+
+
     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Introduction</h5>
     <br>
     <p>When you're ready to deploy your Laravel application to production, there are some important things you can do to make sure your application is running as efficiently as possible. In this document, we'll cover some great starting points for making sure your Laravel application is deployed properly.</p>
     <br>
+
+
     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Server Requirements</h5>
     <br>
     <p>The Laravel framework has a few system requirements. You should ensure that your web server has the following minimum PHP version and extensions:</p>
@@ -155,6 +159,8 @@
     <li class="text-danger">Tokenizer PHP Extension</li>
     <li class="text-danger">XML PHP Extension</li>
     <br>
+
+
     <h4 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Server Configuration</h4>
     <br>
     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Nginx</h5>
@@ -165,22 +171,30 @@
     <br>
     <img src="../photo/foto Nginx.jpeg" alt="" width="500px">
     <br>
+
+
     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>FrankenPHP</h5>
     <br>
     <p>FrankenPHP may also be used to serve your Laravel applications. FrankenPHP is a modern PHP application server written in Go. To serve a Laravel PHP application using FrankenPHP, you may simply invoke its php-server command: frankenphp php-server -r public/</p>
     <br>
     <p>To take advantage of more powerful features supported by FrankenPHP, such as its Laravel Octane integration, HTTP/3, modern compression, or the ability to package Laravel applications as standalone binaries, please consult FrankenPHP's Laravel documentation.</p>
     <br>
+
+
      <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>FrankenPHP</h5>
      <br>
      <p>FrankenPHP may also be used to serve your Laravel applications. FrankenPHP is a modern PHP application server written in Go. To serve a Laravel PHP application using FrankenPHP, you may simply invoke its php-server command: frankenphp php-server -r public/</p>
      <br>
      <p>To take advantage of more powerful features supported by FrankenPHP, such as its Laravel Octane integration, HTTP/3, modern compression, or the ability to package Laravel applications as standalone binaries, please consult FrankenPHP's Laravel documentation.</p>
      <br>
+
+
      <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Directory Permissions</h5>
      <br>
      <p>Laravel will need to write to the bootstrap/cache and storage directories, so you should ensure the web server process owner has permission to write to these directories</p>
      <br>
+
+
      <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Optimization</h5>
      <br>
      <p>When deploying your application to production, there are a variety of files that should be cached, including your configuration, events, routes, and views. Laravel provides a single, convenient optimize Artisan command that will cache all of these files. This command should typically be invoked as part of your application's deployment process: php artisan optimize</p>
@@ -189,6 +203,8 @@
      <br>
      <p>In the following documentation, we will discuss each of the granular optimization commands that are executed by the optimize command.</p>
      <br>
+
+
      <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Caching Configuration</h5>
      <br>
      <p>When deploying your application to production, you should make sure that you run the config:cache Artisan command during your deployment process: php artisan config:cache</p>
@@ -197,27 +213,37 @@
      <br>
      <p class="fw-bold">If you execute the config:cache command during your deployment process, you should be sure that you are only calling the env function from within your configuration files. Once the configuration has been cached, the .env file will not be loaded and all calls to the env function for .env variables will return null.</p>
      <br>
+
+
      <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Caching Events</h5>
      <p>You should cache your application's auto-discovered event to listener mappings during your deployment process. This can be accomplished by invoking the event:cache Artisan command during deployment: php artisan event:cache</p>
      <br>
+
+
     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Caching Routes</h5>
     <br>
     <p>If you are building a large application with many routes, you should make sure that you are running the route:cache Artisan command during your deployment process: php artisan route:cache</p>
     <br>
     <p>This command reduces all of your route registrations into a single method call within a cached file, improving the performance of route registration when registering hundreds of routes.</p>
     <br>
+
+
     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Caching views</h5>
     <br>
     <p>When deploying your application to production, you should make sure that you run the view:cache Artisan command during your deployment process: php artisan view:cache</p>
     <br>
     <p>This command precompiles all your Blade views so they are not compiled on demand, improving the performance of each request that returns a view.</p>
     <br>
+
+
     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Debug Mode</h5>
     <br>
     <p>The debug option in your config/app.php configuration file determines how much information about an error is actually displayed to the user. By default, this option is set to respect the value of the APP_DEBUG environment variable, which is stored in your application's .env file.</p>
     <br>
     <p class="fw-bold">In your production environment, this value should always be false. If the APP_DEBUG variable is set to true in production, you risk exposing sensitive configuration values to your application's end users.</p>
     <br>
+
+
     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>The Health Route</h5>
     <br>
     <p>Laravel includes a built-in health check route that can be used to monitor the status of your application. In production, this route may be used to report the status of your application to an uptime monitor, load balancer, or orchestration system such as Kubernetes.</p>
@@ -228,6 +254,8 @@
     <br>
     <p>When HTTP requests are made to this route, Laravel will also dispatch a Illuminate\Foundation\Events\DiagnosingHealth event, allowing you to perform additional health checks relevant to your application. Within a listener for this event, you may check your application's database or cache status. If you detect a problem with your application, you may simply throw an exception from the listener.</p>
     <br>
+
+
     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Deploying With Laravel Cloud or Forge</h5>
     <br>
     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Laravel Cloud</h5>
@@ -236,6 +264,8 @@
     <br>
     <p>Launch your Laravel application on Cloud and fall in love with the scalable simplicity. Laravel Cloud is fine-tuned by Laravel's creators to work seamlessly with the framework so you can keep writing your Laravel applications exactly like you're used to.</p>
     <br>
+
+
     <h5 class="d-inline-block"><p class="d-inline-block" style="color: red;">#</p>Laravel Forge</h5>
     <br>
     <p>If you prefer to manage your own servers but aren't comfortable configuring all of the various services needed to run a robust Laravel application, Laravel Forge is a VPS server management platform for Laravel applications.</p>
