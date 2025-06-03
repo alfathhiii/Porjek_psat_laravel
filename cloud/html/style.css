@@ -67,3 +67,19 @@ height: 220dvh;
         width: 100%;
         margin-top: 30px;
       }
+      
+
+      .bstar{
+        width: 200px;
+        text-align: center;
+        border-radius: 80px;
+        height: 60px;
+      }
+
+      .docsnav{
+        padding-bottom: 30px;
+        border-bottom: 0.3px solid rgb(73, 72, 72);
+      }
+      .main{
+        margin-left: 500px;
+      }
