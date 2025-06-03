@@ -1,57 +1,85 @@
+*{
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+}
 .hero{
-    margin-top: 130px;
+background: #020024;
+background: linear-gradient(1deg, rgba(2, 0, 36, 1) 0%, rgba(21, 21, 125, 1) 50%, rgba(2, 0, 36, 1) 100%);  
+width: 100%;
+height: 220dvh;
 }
-.hero h1{
-    font-size: 70px;
-    font-weight: 400;
+.content{
+    margin-top: 97px;
+}
+.content h1{
+    font-size: 60px;
+}
+.gambar{
+    border-radius: 20px;
+    position: relative;
+    left: 150px;
+    width: 80%;
+    height: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.gambar img{
+    width: 95%;
+    position: relative;
+    top: 30px;
+    left: 30px;
 }
 
-.ekositem{
-    margin-top: 200px;
-}
-.ekositem h1{
-    font-size: 70px;
-    font-weight: 400;
-}
-
-  .card-hover:hover {
-    transform: scale(1.02);
-    transition: transform 0.2s ease-in-out;
-    cursor: pointer;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  }
-  .card-hover {
-    transition: transform 0.2s ease-in-out;
+  .contact-form {
+    width: 100%;
+    max-width: 600px; /* atau ubah sesuai kebutuhan */
   }
 
-    .product-card {
-    border: none;
-    text-align: center;
-    padding: 2rem 1rem;
-    transition: all 0.2s ease;
+  .contact {
+    flex-wrap: wrap; /* agar responsif di layar kecil */
   }
-  .product-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.1);
+
+  .contact-text {
+    flex: 1;
+    min-width: 300px;
   }
-  .product-icon {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 1rem;
+
+  .contact-form form .form-control {
+    width: 100%;
   }
-  .badge-new {
-    background-color: #f87171;
-    color: white;
-    font-size: 0.7rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.3rem;
-    margin-left: 0.5rem;
-  }
-  .badge-soon {
-    background-color: #e5e7eb;
-    color: #374151;
-    font-size: 0.7rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.3rem;
-    margin-left: 0.5rem;
-  }
+
+  .plan-box {
+        border: 1px solid #dee2e6;
+        padding: 30px;
+        border-radius: 10px;
+        height: 100%;
+      }
+      .plan-box h5 {
+        font-weight: 600;
+      }
+      .plan-box ul {
+        padding-left: 1.2rem;
+      }
+      .plan-box ul li {
+        margin-bottom: 0.5rem;
+      }
+      .plan-box .btn {
+        width: 100%;
+        margin-top: 30px;
+      }
+      
+
+      .bstar{
+        width: 200px;
+        text-align: center;
+        border-radius: 80px;
+        height: 60px;
+      }
+
+      .docsnav{
+        padding-bottom: 30px;
+        border-bottom: 0.3px solid rgb(73, 72, 72);
+      }
+      .main{
+        margin-left: 500px;
+      }
